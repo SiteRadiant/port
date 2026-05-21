@@ -1,10 +1,16 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function About(){
   return (
     <div className="min-h-screen bg-[#070707] text-white">
+      <SEO
+        title="About"
+        description="Learn how Site Radiant helps companies ship SEO-ready digital products, from fast websites to AI-enabled platforms."
+        path="/about"
+      />
       <Navbar />
       <main className="max-w-5xl mx-auto px-6 py-24">
         <h1 className="text-4xl font-extrabold mb-4">About Site Radiant</h1>

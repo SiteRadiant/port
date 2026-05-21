@@ -44,13 +44,17 @@ const Navbar = () => {
               onMouseEnter={() => setHovered(link.label)}
               onMouseLeave={() => setHovered(null)}
             >
-              <button
-                onClick={() => link.href && link.href !== '#' && navigate(link.href)}
-                className="nav-link py-2"
-              >
-                {link.label}
-                {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
-              </button>
+              {link.href && link.href !== '#' ? (
+                <Link to={link.href} className="nav-link py-2">
+                  {link.label}
+                  {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
+                </Link>
+              ) : (
+                <button type="button" className="nav-link py-2">
+                  {link.label}
+                  {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
+                </button>
+              )}
               {link.hasDropdown && hovered === link.label && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[240px]">
                   <div className="bg-[#111114] border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
@@ -71,7 +75,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <button onClick={() => navigate('/services')} className="nav-link">Pricing</button>
+          <Link to="/services" className="nav-link">Pricing</Link>
           <button onClick={() => openContact()} className="btn-primary !py-2 !px-5 !text-[14px]">
             Get a Quote
           </button>
@@ -85,12 +89,18 @@ const Navbar = () => {
       {openMobile && (
         <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3">
           {navLinks.map((link) => (
-            <button key={link.label} className="block w-full text-left text-zinc-300 py-2" onClick={() => { if (link.href && link.href !== '#') navigate(link.href); setOpenMobile(false); }}>
-              {link.label}
-            </button>
+            link.href && link.href !== '#' ? (
+              <Link key={link.label} to={link.href} className="block w-full text-left text-zinc-300 py-2" onClick={() => setOpenMobile(false)}>
+                {link.label}
+              </Link>
+            ) : (
+              <button key={link.label} type="button" className="block w-full text-left text-zinc-300 py-2">
+                {link.label}
+              </button>
+            )
           ))}
           <div className="pt-3 border-t border-white/10 flex gap-3">
-            <button onClick={() => { navigate('/services'); setOpenMobile(false); }} className="flex-1 btn-ghost justify-center !py-2">Pricing</button>
+            <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2">Pricing</Link>
             <button onClick={() => { openContact(); setOpenMobile(false); }} className="flex-1 btn-primary justify-center !py-2">Get a Quote</button>
           </div>
         </div>

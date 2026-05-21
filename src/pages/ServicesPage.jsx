@@ -3,12 +3,18 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { serviceCategories } from '../mock/mock';
 import { useUI } from '../context/UIContext';
+import SEO from '../components/SEO';
 
 export default function ServicesPage() {
   const { openPricing, openContact } = useUI();
 
   return (
     <div className="min-h-screen bg-[#070707] text-white">
+      <SEO
+        title="Services & Pricing"
+        description="Explore Site Radiant's mobile, web, AI, automation, and cloud services with SEO-ready delivery for growing teams."
+        path="/services"
+      />
       <Navbar />
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="max-w-[900px] mb-12">

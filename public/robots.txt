@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
+# Site Radiant robots rules
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: /sitemap.xml
