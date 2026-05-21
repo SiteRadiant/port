@@ -1,5 +1,5 @@
 const RAW_ZOHO_FLOW_WEBHOOK_URL = process.env.REACT_APP_ZOHO_FLOW_WEBHOOK_URL || '';
-const ZOHO_FLOW_WEBHOOK_URL = RAW_ZOHO_FLOW_WEBHOOK_URL.trim().replace(/^['\"]|['\"]$/g, '');
+const ZOHO_FLOW_WEBHOOK_URL = RAW_ZOHO_FLOW_WEBHOOK_URL.trim().replace(/^['"]|['"]$/g, '');
 
 export async function sendLeadToZohoFlow(payload) {
   if (!ZOHO_FLOW_WEBHOOK_URL) {
