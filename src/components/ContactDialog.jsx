@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { X, Send, CheckCircle2, Mail, Phone, User, MessageSquare, Building } from 'lucide-react';
 import { fmt } from '../mock/mock';
+import { sendLeadToZohoFlow } from '../lib/zohoWebhook';
 
-const services = ['Mobile App Development', 'Website Development', 'AI Services', 'Automation Solutions', 'E-Commerce Solutions', 'Social Media Platforms', 'Dating Platforms', 'Gaming Solutions', 'Other'];
+const services = ['Mobile App Development', 'Website Development', 'AI Services', 'Automation Solutions', 'E-Commerce Solutions', 'Social Media Platforms', 'Gaming Solutions', 'Other'];
 const budgets = ['Under ₹50,000', '₹50,000 - ₹1,50,000', '₹1,50,000 - ₹5,00,000', '₹5,00,000 - ₹15,00,000', 'Above ₹15,00,000'];
 
 const ContactDialog = ({ onClose, prefill }) => {
@@ -14,6 +15,8 @@ const ContactDialog = ({ onClose, prefill }) => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -24,8 +27,9 @@ const ContactDialog = ({ onClose, prefill }) => {
 
   const handleChange = (k, v) => setForm((p) => ({ ...p, [k]: v }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    setSubmitError('');
     const errs = {};
     if (!form.name.trim()) errs.name = 'Required';
     if (!form.email.trim() || !/^\S+@\S+\.\S+$/.test(form.email)) errs.email = 'Valid email required';
@@ -34,11 +38,35 @@ const ContactDialog = ({ onClose, prefill }) => {
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
-    // Save lead to localStorage (mock)
-    const leads = JSON.parse(localStorage.getItem('sr_leads') || '[]');
-    leads.push({ ...form, submittedAt: new Date().toISOString() });
-    localStorage.setItem('sr_leads', JSON.stringify(leads));
-    setSubmitted(true);
+    const leadPayload = {
+      ...form,
+      page: window.location.pathname,
+      userAgent: window.navigator.userAgent,
+    };
+
+    try {
+      setSubmitting(true);
+      const result = await sendLeadToZohoFlow(leadPayload);
+
+      // Keep local backup for debugging/demo even when webhook is configured.
+      const leads = JSON.parse(localStorage.getItem('sr_leads') || '[]');
+      leads.push({ ...leadPayload, submittedAt: new Date().toISOString(), webhookSkipped: Boolean(result?.skipped) });
+      localStorage.setItem('sr_leads', JSON.stringify(leads));
+
+      if (result?.skipped) {
+        setSubmitError('Webhook URL is not configured. Lead saved locally only.');
+        return;
+      }
+      setSubmitted(true);
+    } catch (err) {
+      // Fallback to local storage so leads are not lost during webhook/cors failures.
+      const leads = JSON.parse(localStorage.getItem('sr_leads') || '[]');
+      leads.push({ ...leadPayload, submittedAt: new Date().toISOString(), webhookError: String(err?.message || err) });
+      localStorage.setItem('sr_leads', JSON.stringify(leads));
+      setSubmitError('Could not send to Zoho Flow right now. Saved locally as fallback.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -102,10 +130,11 @@ const ContactDialog = ({ onClose, prefill }) => {
                 <textarea rows={4} className="input-field resize-none" placeholder="Tell us about your goals, timeline, and what you want to build..." value={form.message} onChange={(e) => handleChange('message', e.target.value)} />
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center mt-2">
-                Send Enquiry <Send size={15} />
+              <button type="submit" disabled={submitting} className="btn-primary w-full justify-center mt-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                {submitting ? 'Sending...' : 'Send Enquiry'} <Send size={15} />
               </button>
-              <p className="text-[11px] text-zinc-500 text-center">By submitting, you agree to our Privacy Policy. Your data is stored locally for this demo.</p>
+              {submitError && <p className="text-amber-400 text-[12px] text-center">{submitError}</p>}
+              <p className="text-[11px] text-zinc-500 text-center">By submitting, you agree to our Privacy Policy and allow us to process your data for project consultation.</p>
             </form>
           </div>
         ) : (

@@ -45,6 +45,20 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Zoho Flow Webhook Setup
+
+To send form submissions to Zoho Flow, create a `.env` file in the project root and add:
+
+```bash
+REACT_APP_ZOHO_FLOW_WEBHOOK_URL=https://YOUR_ZOHO_FLOW_WEBHOOK_URL
+```
+
+Then restart the development server.
+
+Current form connected:
+
+- Contact dialog form in `src/components/ContactDialog.jsx`
+
 ### Code Splitting
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
