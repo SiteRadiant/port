@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-// App.css import removed; styles are inlined in public/index.html for development.
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,8 +12,7 @@ import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ServicesPage from './pages/ServicesPage';
-import About from './pages/About';
-import Toaster from "./components/ui/toaster";
+import { Toaster } from './components/ui/toaster';
 import { UIProvider } from './context/UIContext';
 
 const Home = () => {
@@ -42,7 +41,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/about" element={<About />} />
           </Routes>
         </UIProvider>
       </BrowserRouter>

@@ -25,10 +25,56 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+  /* Inlined App styles for development (moved from src/App.css) */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  .App { min-height: 100vh; font-family: 'Inter', sans-serif; }
+  .hero-glow { background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(239, 68, 68, 0.18) 0%, rgba(220, 38, 38, 0.08) 40%, transparent 70%); pointer-events: none; }
+  .gradient-text { background: linear-gradient(90deg, #fca5a5 0%, #f87171 35%, #ef4444 70%, #dc2626 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .marquee { display: flex; width: max-content; animation: marquee 50s linear infinite; }
+  .marquee-track { display: flex; gap: 1.5rem; padding-right: 1.5rem; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .fade-edges { -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
+  .svc-card { background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%); border: 1px solid rgba(255,255,255,0.07); transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease; }
+  .svc-card:hover { border-color: rgba(239, 68, 68, 0.4); background: linear-gradient(180deg, rgba(239,68,68,0.06) 0%, rgba(220,38,38,0.02) 100%); transform: translateY(-2px); }
+  .icon-tile { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; }
+  .eyebrow { color: #f87171; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); font-size: 13px; color: #d4d4d8; }
+  .btn-primary { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px -6px rgba(220, 38, 38, 0.5); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
+  .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 10px 24px -6px rgba(220, 38, 38, 0.65); }
+  .btn-white { background: #ffffff; color: #0a0a0b; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s ease, transform 0.2s ease; }
+  .btn-white:hover { background: #ededed; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12); transition: background 0.2s ease, border-color 0.2s ease; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(239, 68, 68, 0.4); }
+  .price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; min-width: 240px; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  .price-card:hover { border-color: rgba(239, 68, 68, 0.45); background: rgba(239, 68, 68, 0.05); transform: translateY(-2px); }
+  .logo-chip { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); white-space: nowrap; color: #d4d4d8; font-weight: 500; font-size: 15px; }
+  .logo-dot { width: 28px; height: 28px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .industry-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 24px; transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease; }
+  .industry-card:hover { border-color: rgba(239,68,68,0.4); transform: translateY(-3px); background: rgba(239,68,68,0.04); }
+  .step-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px; position: relative; }
+  .test-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; }
+  .dot-nav { width: 8px; height: 8px; border-radius: 9999px; background: rgba(255,255,255,0.18); transition: width 0.3s ease, background 0.3s ease; }
+  .dot-nav.active { width: 28px; background: #ef4444; }
+  .grid-bg { background-image: linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 0%, transparent 70%); }
+  .nav-link { color: #d4d4d8; font-size: 14.5px; font-weight: 400; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease; background: transparent; border: none; cursor: pointer; }
+  .nav-link:hover { color: #ffffff; }
+  .navbar-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10, 10, 11, 0.7); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .plan-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 28px; transition: border-color 0.3s ease, transform 0.3s ease; display: flex; flex-direction: column; }
+  .plan-card:hover { border-color: rgba(239, 68, 68, 0.3); }
+  .plan-card.popular { border-color: rgba(239, 68, 68, 0.55); background: linear-gradient(180deg, rgba(239,68,68,0.08) 0%, rgba(220,38,38,0.02) 100%); box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2), 0 20px 40px -12px rgba(239, 68, 68, 0.25); }
+  .badge-soft { display: inline-flex; align-items: center; gap: 6px; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .input-field { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px; color: #fff; font-size: 14px; outline: none; transition: border-color 0.2s ease, background 0.2s ease; }
+  .input-field:focus { border-color: rgba(239, 68, 68, 0.6); background: rgba(255,255,255,0.06); }
+  .input-field::placeholder { color: #71717a; }
+  .cat-num { font-family: 'Inter', sans-serif; font-size: 14px; color: #ef4444; font-weight: 600; letter-spacing: 0.1em; }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Load Tailwind via CDN for development to apply utility classes without PostCSS build step -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
