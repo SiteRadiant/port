@@ -2,21 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { serviceCategories } from '../mock/mock';
-import { ShoppingCart, Users, Heart, Gamepad2, Rocket, Building, Globe, Smartphone, Sparkles, Zap } from 'lucide-react';
 import { useUI } from '../context/UIContext';
-
-const iconMap = {
-  'shopping-cart': ShoppingCart,
-  'users': Users,
-  'heart': Heart,
-  'gamepad-2': Gamepad2,
-  'rocket': Rocket,
-  'building-2': Building,
-  'globe': Globe,
-  'smartphone': Smartphone,
-  'sparkles': Sparkles,
-  'zap': Zap,
-};
 
 export default function ServicesPage() {
   const { openPricing, openContact } = useUI();
