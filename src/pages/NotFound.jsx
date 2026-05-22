@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-[#070707] text-white flex items-center">
       <SEO
         title="Page Not Found"
-        description="The requested page does not exist. Return to Site Radiant's homepage or explore services."
+        description="The requested page does not exist. Return to SiteRadiant's homepage or explore services."
         path="/404"
         noIndex
       />

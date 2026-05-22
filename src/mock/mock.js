@@ -1,5 +1,5 @@
-// Mock data for Site Radiant
-export const BRAND = 'Site Radiant';
+// Mock data for SiteRadiant
+export const BRAND = 'SiteRadiant';
 
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
@@ -20,7 +20,6 @@ export const navLinks = [
     { label: 'Retail & Commerce', slug: 'retail' },
     { label: 'Media & Entertainment', slug: 'media' },
   ]},
-  { label: 'Case Studies', href: '#', hasDropdown: false },
   { label: 'About', href: '/about', hasDropdown: false },
 ];
 
@@ -60,8 +59,8 @@ export const processSteps = [
 ];
 
 export const testimonials = [
-  { brand: 'CRED', country: 'India', flag: '🇮🇳', color: '#000000', quote: 'Site Radiant understood our product philosophy from day one. The reward engine they built is what makes our app feel like a club.', author: 'Head of Product, CRED', caseTitle: 'Reward Engine That Made Paying Bills Addictive' },
-  { brand: 'Canva', country: 'Australia', flag: '🇦🇺', color: '#00C4CC', quote: 'Site Radiant delivered production-quality work at a pace we had only seen from top-tier internal teams.', author: 'Growth Engineering Lead, Canva', caseTitle: 'Rebuilt Mobile Onboarding in 6 Weeks' },
+  { brand: 'CRED', country: 'India', flag: '🇮🇳', color: '#000000', quote: 'SiteRadiant understood our product philosophy from day one. The reward engine they built is what makes our app feel like a club.', author: 'Head of Product, CRED', caseTitle: 'Reward Engine That Made Paying Bills Addictive' },
+  { brand: 'Canva', country: 'Australia', flag: '🇦🇺', color: '#00C4CC', quote: 'SiteRadiant delivered production-quality work at a pace we had only seen from top-tier internal teams.', author: 'Growth Engineering Lead, Canva', caseTitle: 'Rebuilt Mobile Onboarding in 6 Weeks' },
   { brand: 'Razorpay', country: 'India', flag: '🇮🇳', color: '#0c2451', quote: 'They shipped a payments integration our internal team estimated at 3 months — in just 4 weeks. Outstanding.', author: 'VP Engineering, Razorpay', caseTitle: 'Cut Checkout Drop-off by 38% in One Quarter' },
   { brand: 'Zepto', country: 'India', flag: '🇮🇳', color: '#b91c1c', quote: 'Their AI recommendations boosted basket size by 24%. The collaboration felt like an extension of our team.', author: 'Director of Growth, Zepto', caseTitle: 'AI Recommendations That Lifted AOV by 24%' },
 ];

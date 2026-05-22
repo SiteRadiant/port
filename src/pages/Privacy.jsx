@@ -8,7 +8,7 @@ export default function Privacy() {
     <div className="min-h-screen bg-[#070707] text-white">
       <SEO
         title="Privacy Policy"
-        description="Read how Site Radiant handles contact form submissions, analytics, and customer data."
+        description="Read how SiteRadiant handles contact form submissions, analytics, and customer data."
         path="/privacy"
       />
       <Navbar />

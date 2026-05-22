@@ -7,22 +7,22 @@
     <meta name="theme-color" content="#0a0a0b" />
     <meta
       name="description"
-      content="Site Radiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+      content="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
     />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <meta name="author" content="Site Radiant" />
-    <meta property="og:site_name" content="Site Radiant" />
+    <meta name="author" content="SiteRadiant" />
+    <meta property="og:site_name" content="SiteRadiant" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Site Radiant | IT Consulting, Software Development & AI Automation" />
+    <meta property="og:title" content="SiteRadiant | IT Consulting, Software Development & AI Automation" />
     <meta
       property="og:description"
-      content="Site Radiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+      content="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
     />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Site Radiant | IT Consulting, Software Development & AI Automation" />
+    <meta name="twitter:title" content="SiteRadiant | IT Consulting, Software Development & AI Automation" />
     <meta
       name="twitter:description"
-      content="Site Radiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+      content="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -39,7 +39,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Site Radiant | IT Consulting, Software Development & AI Automation</title>
+    <title>SiteRadiant | IT Consulting, Software Development & AI Automation</title>
     <style>
   /* Inlined App styles for development (moved from src/App.css) */
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -57,6 +57,8 @@
   .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); font-size: 13px; color: #d4d4d8; }
   .btn-primary { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px -6px rgba(220, 38, 38, 0.5); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
   .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 10px 24px -6px rgba(220, 38, 38, 0.65); }
+  .hero-cta-btn { border: 1px solid rgba(248, 113, 113, 0.7); gap: 12px; padding-right: 10px; }
+  .hero-cta-arrow { width: 28px; height: 28px; border-radius: 9999px; background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center; justify-content: center; }
   .btn-white { background: #ffffff; color: #0a0a0b; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s ease, transform 0.2s ease; }
   .btn-white:hover { background: #ededed; transform: translateY(-1px); }
   .btn-ghost { background: transparent; color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12); transition: background 0.2s ease, border-color 0.2s ease; }
@@ -83,6 +85,30 @@
   .input-field:focus { border-color: rgba(239, 68, 68, 0.6); background: rgba(255,255,255,0.06); }
   .input-field::placeholder { color: #71717a; }
   .cat-num { font-family: 'Inter', sans-serif; font-size: 14px; color: #ef4444; font-weight: 600; letter-spacing: 0.1em; }
+
+  /* Site-wide: remove white borders while preserving layout */
+  .svc-card,
+  .icon-tile,
+  .pill,
+  .btn-ghost,
+  .price-card,
+  .logo-chip,
+  .industry-card,
+  .step-card,
+  .test-card,
+  .navbar-blur,
+  .plan-card,
+  .input-field {
+    border-color: transparent !important;
+  }
+
+  [class*="border-white/"] {
+    border-color: transparent !important;
+  }
+
+  [class*="border-white"] {
+    border-color: transparent !important;
+  }
     </style>
   </head>
   <body>

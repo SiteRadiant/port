@@ -27,13 +27,13 @@ const Home = () => {
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <SEO
         title="IT Consulting, Software Development & AI Automation"
-        description="Site Radiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+        description="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
         path="/"
         schema={[
           {
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Site Radiant',
+            name: 'SiteRadiant',
             url: window.location.origin,
             logo: `${window.location.origin}/logo192.png`,
             sameAs: [],
@@ -41,7 +41,7 @@ const Home = () => {
           {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'Site Radiant',
+            name: 'SiteRadiant',
             url: window.location.origin,
             potentialAction: {
               '@type': 'SearchAction',

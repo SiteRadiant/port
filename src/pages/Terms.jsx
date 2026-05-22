@@ -8,7 +8,7 @@ export default function Terms() {
     <div className="min-h-screen bg-[#070707] text-white">
       <SEO
         title="Terms of Service"
-        description="Review the basic terms for using Site Radiant's website and service enquiry forms."
+        description="Review the basic terms for using SiteRadiant's website and service enquiry forms."
         path="/terms"
       />
       <Navbar />

@@ -63,8 +63,11 @@ const Hero = () => {
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <button onClick={() => openContact()} className="btn-primary">
-            Book a Consultation <ArrowRight size={16} />
+          <button onClick={() => openContact()} className="btn-primary hero-cta-btn">
+            <span>Book a Consultation</span>
+            <span className="hero-cta-arrow">
+              <ArrowRight size={15} />
+            </span>
           </button>
           <button onClick={() => navigate('/services')} className="btn-ghost">
             Explore Services

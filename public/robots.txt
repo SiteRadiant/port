@@ -1,4 +1,4 @@
-# Site Radiant robots rules
+# SiteRadiant robots rules
 User-agent: *
 Allow: /
 

@@ -16,7 +16,7 @@ import { Toaster } from './components/ui/toaster';
 import { UIProvider } from './context/UIContext';
 
 const Home = () => {
-  useEffect(() => { document.title = 'Site Radiant — IT Consulting & Software Development'; }, []);
+  useEffect(() => { document.title = 'SiteRadiant — IT Consulting & Software Development'; }, []);
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <Navbar />

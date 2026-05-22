@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const SITE_NAME = 'Site Radiant';
-const DEFAULT_DESCRIPTION = 'Site Radiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses.';
+const SITE_NAME = 'SiteRadiant';
+const DEFAULT_DESCRIPTION = 'SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses.';
 
 const setMetaTag = (selector, attributes) => {
   const existingTag = document.head.querySelector(selector);

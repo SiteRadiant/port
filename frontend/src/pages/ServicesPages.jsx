@@ -16,7 +16,7 @@ const ServicesPage = () => {
   const { openPricing, openContact } = useUI();
   const navigate = useNavigate();
 
-  React.useEffect(() => { document.title = 'Services & Pricing — Site Radiant'; window.scrollTo(0, 0); }, []);
+  React.useEffect(() => { document.title = 'Services & Pricing — SiteRadiant'; window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">

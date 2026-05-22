@@ -12,7 +12,7 @@ INDEX_FILE = BUILD_DIR / 'index.html'
 def read_root():
     if INDEX_FILE.exists():
         return FileResponse(INDEX_FILE)
-    return {"message": "Site Radiant backend is running"}
+    return {"message": "SiteRadiant backend is running"}
 
 @app.get('/status')
 def status():
