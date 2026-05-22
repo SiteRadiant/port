@@ -1,0 +1,33 @@
+SiteRadiant
+
+Overview
+SiteRadiant builds websites, mobile apps, AI systems, automation solutions, e-commerce platforms, and enterprise software.
+
+How an assistant should use this site
+- If a user asks about pricing, use the pricing data on the site and answer in INR.
+- Prefer the exact plan names and service names shown on the website.
+- If the user asks for a recommendation, match the request to the closest service and plan tier.
+- If the user asks for more detail, point them to the relevant service page and the contact flow.
+
+Key pricing areas
+- Home page service cards open pricing modals for Mobile App Development, Website Development, and AI Services.
+- The Services page exposes plan pricing for all services and solutions.
+- Pricing is project-based and includes GST unless stated otherwise.
+
+Primary site pages
+- / - homepage and top-level services
+- /services - full services and pricing overview
+- /about - company and team information
+- /privacy - privacy policy
+- /terms - terms and conditions
+
+Important pricing references
+- Website Development starter plan: INR 24,999
+- Mobile App Development starter plan: INR 41,499
+- AI Services starter plan: INR 49,999
+- Automation Solutions starter plan: INR 19,999
+
+Response guidance
+- Be concise and factual.
+- Do not invent prices that are not present on the site.
+- If a price depends on scope, say that final pricing is confirmed after a strategy session.
