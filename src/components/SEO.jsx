@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE_NAME = 'SiteRadiant';
-const DEFAULT_DESCRIPTION = 'SiteRadiant builds SEO-ready websites, for growing businesses.';
+const DEFAULT_DESCRIPTION = 'SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses.';
 
 const setMetaTag = (selector, attributes) => {
   const existingTag = document.head.querySelector(selector);
@@ -36,8 +36,8 @@ const setLinkTag = (selector, attributes) => {
 const setFaviconLinks = () => {
   const links = [
     ['link[rel="icon"][href$="/favicon.ico"]', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
-    ['link[rel="icon"][sizes="16x16"]', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/android-chrome-16x16.png' }],
-    ['link[rel="icon"][sizes="32x32"]', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/android-chrome-32x32.png' }],
+    ['link[rel="icon"][sizes="16x16"]', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
+    ['link[rel="icon"][sizes="32x32"]', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
     ['link[rel="apple-touch-icon"]', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
     ['link[rel="manifest"]', { rel: 'manifest', href: '/site.webmanifest' }],
   ];

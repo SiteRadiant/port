@@ -22,8 +22,14 @@ Primary site pages
 - /terms - terms and conditions
 
 Important pricing references
-- Website Development starter plan: INR 9,999
-- More Prices are yet to come.
+- Website Development starter plan: INR 24,999
+- Mobile App Development starter plan: INR 41,499
+- AI Services starter plan: INR 49,999
+- Automation Solutions starter plan: INR 19,999
+- E-Commerce Solutions starter plan: INR 34,999
+- Social Media Platforms starter plan: INR 79,999
+- Dating Platforms starter plan: INR 99,999
+- Gaming Solutions starter plan: INR 149,999
 
 Response guidance
 - Be concise and factual.
