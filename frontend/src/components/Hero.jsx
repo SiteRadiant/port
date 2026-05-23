@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle2, TrendingUp, Star, Briefcase, Globe, Smartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
-import { BRAND, fmt } from '../mock/mock';
+import { BRAND, fmt, getStartingPrice } from '../mock/mock';
 
 const heroPills = [
   { icon: CheckCircle2, color: 'text-emerald-400', label: 'App launched in 6 weeks' },
@@ -44,18 +44,13 @@ const Hero = () => {
             </div>
             <div className="text-left">
               <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{fmt(24999)}</div>
+              <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('website'))}</div>
               <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>
           <div className="price-card" onClick={() => openPricing('mobile-app')}>
             <div className="w-10 h-10 rounded-lg bg-red-500/15 border border-red-500/25 flex items-center justify-center">
               <Smartphone size={18} className="text-red-300" />
-            </div>
-            <div className="text-left">
-              <div className="text-[11px] uppercase tracking-wider text-zinc-500">Mobile App</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{fmt(41499)}</div>
-              <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>
         </div>

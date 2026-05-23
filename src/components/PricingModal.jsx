@@ -59,7 +59,7 @@ const PricingModal = ({ serviceId, onClose }) => {
                 )}
                 <span className="text-[34px] font-extrabold text-white tracking-tight">{fmt(plan.price)}</span>
               </div>
-              <span className="text-[12px] text-zinc-500">one-time · incl. GST</span>
+              <span className="text-[12px] text-zinc-500">one-time · exclusive. GST</span>
 
               <ul className="mt-6 space-y-3 flex-1">
                 {plan.features.map((f) => (

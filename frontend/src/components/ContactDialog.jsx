@@ -105,7 +105,7 @@ const ContactDialog = ({ onClose, prefill }) => {
               <button type="submit" className="btn-primary w-full justify-center mt-2">
                 Send Enquiry <Send size={15} />
               </button>
-              <p className="text-[11px] text-zinc-500 text-center">By submitting, you agree to our Privacy Policy. Your data is stored locally for this demo.</p>
+              <p className="text-[11px] text-zinc-500 text-center">By submitting, you agree to our Privacy Policy. Your data is stored safely.</p>
             </form>
           </div>
         ) : (

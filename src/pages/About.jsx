@@ -129,7 +129,7 @@ export default function About() {
             <div className="rounded-2xl border border-red-500/25 bg-[radial-gradient(circle_at_70%_30%,rgba(239,68,68,0.16),transparent_50%)] p-6 office-card">
               <div className="text-xs tracking-[0.12em] uppercase text-red-300 mb-2">Headquarters</div>
               <h3 className="text-2xl font-semibold">Navi Mumbai, Maharashtra</h3>
-              <p className="mt-3 text-zinc-400 leading-relaxed">Wherever Peaceful in Maharashtra</p>
+              <p className="mt-3 text-zinc-400 leading-relaxed">Wherever Peaceful in Navi Mumbai</p>
             </div>
           </div>
 
@@ -145,10 +145,10 @@ export default function About() {
               <div></div>
               <div>
                 <div className="text-xs text-zinc-500">Contact Support</div>
-                <a className="font-semibold text-red-300 hover:text-red-200" href="tel:+917208999095">+91 7208999095</a>
+                <a className="font-semibold text-red-300 hover:text-red-200" href="tel:+919372746969">+91 9372746969</a>
               </div>
             </div>
-            <div className="text-sm text-zinc-500">Mon-Sat, 9 AM - 7 PM IST</div>
+            <div className="text-sm text-zinc-500">Mon-Sat, 3 PM - 9 PM IST</div>
           </div>
         </div>
       </section>

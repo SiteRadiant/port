@@ -1,14 +1,12 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, TrendingUp, Star, Briefcase, Globe } from 'lucide-react';
+import { ArrowRight, CheckCircle2, TrendingUp, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
-import { BRAND, fmt } from '../mock/mock';
+import { BRAND, fmt, getStartingPrice } from '../mock/mock';
 
 const heroPills = [
   { icon: CheckCircle2, color: 'text-emerald-400', label: 'Website launched in 2 weeks' },
   { icon: TrendingUp, color: 'text-red-400', label: 'Revenue +127% in 3 months' },
-  { icon: Star, color: 'text-amber-400 fill-amber-400', label: '4.9 ★ App Store Rating' },
-  { icon: Briefcase, color: 'text-sky-400', label: 'AI agent live in 2 days' },
 ];
 
 const Hero = () => {
@@ -44,7 +42,7 @@ const Hero = () => {
             </div>
             <div className="text-left">
               <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{fmt(24999)}</div>
+              <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('website'))}</div>
               <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>  

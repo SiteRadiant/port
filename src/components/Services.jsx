@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { services } from '../mock/mock';
-import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight } from 'lucide-react';
+import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 
 const iconMap = {
@@ -9,14 +8,12 @@ const iconMap = {
   'bar-chart-3': BarChart3, 'sparkles': Sparkles, 'cloud': Cloud,
 };
 
-// map home service ids -> pricing modal keys
 const pricingMap = {
-  'mobile-app': 'mobile-app', 'website': 'website', 'ai': 'ai',
+  'website': 'website', 'ai': 'ai',
   'marketing': 'automation', 'sales': 'automation', 'cloud': null,
 };
 
 const Services = () => {
-  const navigate = useNavigate();
   const { openPricing, openContact } = useUI();
 
   const handleClick = (id) => {
@@ -35,7 +32,7 @@ const Services = () => {
             <span className="text-zinc-500">nothing you don't</span>
           </h2>
           <p className="mt-4 text-zinc-400 text-[16px] max-w-[560px]">
-            Full-stack software services — mobile, web, automation, and AI — under one roof. Click a card to view example plans or start a conversation.
+            Full-stack software services — mobile, web, — under one roof. Click a card to view example plans or start a conversation.
           </p>
         </div>
 
@@ -61,7 +58,12 @@ const Services = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <button onClick={() => navigate('/contact')} className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Book a Consultation</button>
+          <button onClick={() => openContact()} className="btn-primary hero-cta-btn">
+            <span>Book a Consultation</span>
+            <span className="hero-cta-arrow">
+              <ArrowRight size={15} />
+            </span>
+          </button>
         </div>
       </div>
     </section>

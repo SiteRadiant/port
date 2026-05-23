@@ -10,7 +10,7 @@ import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import { BRAND, fmt } from '../mock/mock';
+import { BRAND, fmt, getStartingPrice } from '../mock/mock';
 import { useUI } from '../context/UIContext';
 
 const heroPills = [
@@ -52,7 +52,7 @@ export default function ServicesPage() {
           </h1>
 
           <p className="mt-6 max-w-[680px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-            From mobile apps and websites to AI and automation, {BRAND} builds the systems, products, and launch plans that help growing businesses scale with clarity.
+            From mobile apps and websites {BRAND} builds the systems, products, and launch plans that help growing businesses scale with clarity.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -62,7 +62,7 @@ export default function ServicesPage() {
               </div>
               <div className="text-left">
                 <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-                <div className="text-[20px] font-bold text-white leading-tight">{fmt(24999)}</div>
+                <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('website'))}</div>
                 <div className="text-[11px] text-zinc-500">starting price</div>
               </div>
             </div>

@@ -34,7 +34,7 @@ const ServicesPage = () => {
             From mobile apps to AI-powered platforms — explore our full capabilities and click any service to see plans and pricing in INR.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
-            {['Mobile', 'Web', 'AI', 'Automation', 'E-commerce', 'Gaming'].map((t) => (
+            {['Web','E-commerce'].map((t) => (
               <span key={t} className="pill text-[12.5px]">{t}</span>
             ))}
           </div>
