@@ -85,7 +85,7 @@ export const pricingData = {
     subtitle: 'Scalable online stores and marketplaces built to drive sales across India and beyond.',
     tagline: 'Commerce, Accelerated',
     plans: [
-      { name: 'Starter', price: 34999, original: 44999, popular: false, desc: 'Custom e-commerce store', features: ['Shopify or WooCommerce setup', 'Up to 50 products', 'Razorpay / Stripe payments', 'Mobile-responsive theme', 'Basic SEO', '30 days support'] },
+      { name: 'Starter', price: 34999, original: 44999, popular: false, desc: 'Custom e-commerce store', features: ['Custom store setup', 'Up to 50 products', 'Razorpay / Stripe payments', 'Mobile-responsive theme', 'Basic SEO', '30 days support'] },
       { name: 'Growth', price: 69999, original: 89999, popular: true, desc: 'Custom storefront with AI search', features: ['Custom Next.js storefront', 'Headless CMS', 'AI-powered search & recommendations', 'Inventory + order management', 'Multi-language', 'Loyalty programme', '90 days support'] },
       { name: 'Enterprise', price: 119999, original: 149999, popular: false, desc: 'Multi-vendor marketplace', features: ['Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Multi-warehouse fulfilment', 'B2B + B2C flows', 'Mobile apps (iOS + Android)', 'Dedicated team', '12 months support'] },
     ],
