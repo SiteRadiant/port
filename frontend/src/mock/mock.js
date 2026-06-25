@@ -17,9 +17,7 @@ export const navLinks = [
 ];
 
 export const partnerLogos = [
-  { name: 'Razorpay', color: '#0c2451' }, { name: 'CRED', color: '#000000' },
-  { name: 'Zepto', color: '#b91c1c' }, { name: 'Canva', color: '#00C4CC' },
-  { name: 'Notion', color: '#ffffff' }, { name: 'Figma', color: '#F24E1E' },
+  { name: 'EliteDrop', color: '#0c2451' },
 ];
 
 export const services = [
@@ -82,9 +80,9 @@ export const pricingData = {
     subtitle: 'Fast, SEO-ready websites and web applications built to convert visitors into customers.',
     tagline: 'Crafted to Convert',
     plans: [
-      { name: 'Starter', badge: 'Early Bird', price: 9999, original: 11000, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 5 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', 'Google Analytics integration', '14 days post-launch support'] },
-      { name: 'Growth', price: 24999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
-      { name: 'Enterprise', price: 89999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
+      { name: 'Starter', badge: 'Early Bird', price: 4999, original: 9999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
+      { name: 'Growth', price: 9999, original: 12999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
+      { name: 'Enterprise', price: 14999, original: 19999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
     ],
   },
   'ai': {
@@ -112,9 +110,9 @@ export const pricingData = {
     subtitle: 'Scalable online stores and marketplaces built to drive sales across India and beyond.',
     tagline: 'Commerce, Accelerated',
     plans: [
-      { name: 'Starter', price: 34999, popular: false, desc: 'Custom store', features: ['Custom store setup', 'Up to 50 products', 'Razorpay / Stripe payments', 'Mobile-responsive theme', 'Basic SEO', '30 days support'] },
-      { name: 'Growth', price: 74999, popular: true, desc: 'Custom storefront with AI search', features: ['Custom Next.js storefront', 'Headless CMS', 'AI-powered search & recommendations', 'Inventory + order management', 'Multi-language', 'Loyalty programme', '90 days support'] },
-      { name: 'Enterprise', price: 119999, popular: false, desc: 'Multi-vendor marketplace', features: ['Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Multi-warehouse fulfilment', 'B2B + B2C flows', 'Mobile apps (iOS + Android)', 'Dedicated team', '12 months support'] },
+      { name: 'Starter', price: 19999, original: 24999,popular: false, desc: 'Custom store', features: ['Custom store setup', 'Up to 50 products', 'Razorpay / Stripe payments', 'Mobile-responsive theme', 'Basic SEO', '30 days support'] },
+      { name: 'Growth', price: 29999, original: 49999, popular: true, desc: 'Custom storefront with AI search', features: ['Custom Next.js storefront', 'Headless CMS', 'AI-powered search & recommendations', 'Inventory + order management', 'Multi-language', 'Loyalty programme', '90 days support'] },
+      { name: 'Enterprise', price: 89999, original: 149999, popular: false, desc: 'Multi-vendor marketplace', features: ['Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Multi-warehouse fulfilment', 'B2B + B2C flows', 'Mobile apps (iOS + Android)', 'Dedicated team', '12 months support'] },
     ],
   },
   'startups': {
