@@ -2,4 +2,24 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow AI Bots to crawl and index
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: OmgiliBot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
 Sitemap: https://www.siteradiant.co.in/sitemap.xml

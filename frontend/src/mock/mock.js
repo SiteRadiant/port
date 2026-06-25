@@ -81,8 +81,8 @@ export const pricingData = {
     tagline: 'Crafted to Convert',
     plans: [
       { name: 'Starter', badge: 'Early Bird', price: 4999, original: 9999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
-      { name: 'Growth', price: 9999, original: 12999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
-      { name: 'Enterprise', price: 14999, original: 19999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
+      { name: 'Growth', price: 10499, original: 15999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
+      { name: 'Enterprise', price: 24999, original: 34999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
     ],
   },
   'ai': {
@@ -139,17 +139,14 @@ export const pricingData = {
 
 // Categories on /services page
 export const serviceCategories = [
-  { num: '01', title: 'Services', sub: 'Core software development capabilities', count: '4 offerings', items: [
+  { num: '01', title: 'Services', sub: 'Core software development capabilities', count: '3 offerings', items: [
     { id: 'mobile-app', icon: 'smartphone', title: 'Mobile App Development', tagline: 'Built for a Billion Users', desc: 'Native and cross-platform mobile apps that engage users and scale with your business.' },
     { id: 'website', icon: 'globe', title: 'Website Development', tagline: 'Crafted to Convert', desc: 'Fast, SEO-ready websites and web applications built to convert visitors into customers.' },
-    { id: 'ai', icon: 'sparkles', title: 'AI Services', tagline: 'Intelligence, Engineered', desc: 'Production-ready AI that automates work, delights users, and gives your business a competitive edge.' },
     { id: 'automation', icon: 'zap', title: 'Automation Solutions', tagline: 'Work Smarter, Scale Faster', desc: 'Eliminate repetitive work and connect your tools so your team can focus on what matters.' },
   ]},
-  { num: '02', title: 'Solutions', sub: 'Platform builds for specific verticals', count: '4 offerings', items: [
+  { num: '02', title: 'Solutions', sub: 'Platform builds for specific verticals', count: '2 offerings', items: [
     { id: 'ecommerce', icon: 'shopping-cart', title: 'E-Commerce Solutions', tagline: 'Commerce, Accelerated', desc: 'Scalable online stores and marketplaces built to drive sales across India and beyond.' },
-    { id: 'social', icon: 'users', title: 'Social Media Platforms', tagline: 'Communities That Scale', desc: 'Community apps, creator platforms, and social networks engineered for engagement and scale.' },
-    { id: 'dating', icon: 'heart', title: 'Dating Platforms', tagline: 'Connections That Matter', desc: 'Matchmaking apps and relationship platforms built with safety, AI, and engagement at the core.' },
-    { id: 'gaming', icon: 'gamepad-2', title: 'Gaming Solutions', tagline: 'Games People Love', desc: 'Multiplayer games, casino platforms, and real-money gaming systems built for scale and compliance.' },
+    { id: 'social', icon: 'users', title: 'Social Media Platforms', tagline: 'Communities That Scale', desc: 'Community apps, creator platforms, and social networks engineered for engagement and scale.' }, 
   ]},
   { num: '03', title: 'Industries', sub: 'Sectors we know inside out', count: '4 offerings', items: [
     { id: 'startups', icon: 'rocket', title: 'Startups', tagline: 'From Idea to Launch', desc: 'MVP to Series A — we build the product that gets you funded and your first 10,000 users.' },

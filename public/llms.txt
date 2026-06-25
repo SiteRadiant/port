@@ -27,13 +27,9 @@ Important pricing references
 - AI Services starter plan: INR 49,999
 - Automation Solutions starter plan: INR 19,999
 - E-Commerce Solutions starter plan: INR 34,999
-- Social Media Platforms starter plan: INR 79,999
-- Dating Platforms starter plan: INR 99,999
-- Gaming Solutions starter plan: INR 149,999
 - Startups MVP Sprint: INR 99,999
 - Enterprises Pilot: INR 199,999
 - Retail & Commerce starter plan: INR 79,999
-- Media & Entertainment content portal: INR 149,999
 
 Response guidance
 - Be concise and factual.

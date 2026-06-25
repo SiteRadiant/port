@@ -10,22 +10,17 @@ export const navLinks = [
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', slug: 'ecommerce' },
-    { label: 'Social Media', slug: 'social' },
-    { label: 'Dating Platforms', slug: 'dating' },
-    { label: 'Gaming Solutions', slug: 'gaming' },
   ]},
   { label: 'Industries', href: '/services', hasDropdown: true, items: [
     { label: 'Startups', slug: 'startups' },
     { label: 'Enterprises', slug: 'enterprises' },
     { label: 'Retail & Commerce', slug: 'retail' },
-    { label: 'Media & Entertainment', slug: 'media' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
 ];
 
 export const partnerLogos = [
-  { name: 'CRED', color: '#000000' },
-  { name: 'TradingView', color: '#2962FF' },
+  { name: 'EliteDrop', color: '#000000' },
 ];
 
 export const services = [
@@ -76,8 +71,8 @@ export const pricingData = {
     tagline: 'Crafted to Convert',
     plans: [
       { name: 'Starter', badge: 'Early Bird', price: 4999, original: 9999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
-      { name: 'Growth', price: 9999, original: 12999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
-      { name: 'Enterprise', price: 14999, original: 19999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
+      { name: 'Growth', price: 11499, original: 15999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
+      { name: 'Enterprise', price: 24999, original: 34999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
     ],
   },
   'ecommerce': {

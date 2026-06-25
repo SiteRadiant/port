@@ -13,7 +13,7 @@ const colorMap = {
   blue: { bg: 'bg-sky-500/10', border: 'border-sky-500/25', text: 'text-sky-400' },
 };
 
-const slugMap = { 'E-Commerce': 'ecommerce', 'Social Media': 'social', 'Dating': 'dating', 'Gaming': 'gaming', 'Other': null };
+const slugMap = { 'E-Commerce': 'ecommerce', 'Social Media': 'social', 'Gaming': 'gaming', 'Other': null };
 
 const Industries = () => {
   const navigate = useNavigate();
