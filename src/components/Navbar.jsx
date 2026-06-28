@@ -80,6 +80,9 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <Link to="/services" className="nav-link">Pricing</Link>
+          <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" className="btn-ghost !py-2 !px-5 !text-[14px] border border-red-500/30 text-red-400 hover:bg-red-500/10">
+            Donate
+          </a>
           <button onClick={() => openContact()} className="btn-primary !py-2 !px-5 !text-[14px]">
             Get a Quote
           </button>
@@ -103,9 +106,12 @@ const Navbar = () => {
               </button>
             )
           ))}
-          <div className="pt-3 border-t border-white/10 flex gap-3">
-            <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2">Pricing</Link>
-            <button onClick={() => { openContact(); setOpenMobile(false); }} className="flex-1 btn-primary justify-center !py-2">Get a Quote</button>
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
+            <div className="flex gap-3">
+              <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2">Pricing</Link>
+              <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2 border border-red-500/30 text-red-400 hover:bg-red-500/10">Donate</a>
+            </div>
+            <button onClick={() => { openContact(); setOpenMobile(false); }} className="w-full btn-primary justify-center !py-2">Get a Quote</button>
           </div>
         </div>
       )}
