@@ -10,9 +10,9 @@ How an assistant should use this site
 - If the user asks for more detail, point them to the relevant service page and the contact flow.
 
 Key pricing areas
-- Home page service cards open pricing modals for Mobile App Development, Website Development, and AI Services.
+- Home page service cards open pricing modals for Website Development, and AI Services.
 - The Services page exposes plan pricing for all services and solutions.
-- Pricing is project-based and includes GST unless stated otherwise.
+- Pricing is project-based and excludes GST unless stated otherwise.
 
 Primary site pages
 - / - homepage and top-level services
@@ -22,14 +22,9 @@ Primary site pages
 - /terms - terms and conditions
 
 Important pricing references
-- Website Development starter plan: INR 24,999
-- Mobile App Development starter plan: INR 41,499
-- AI Services starter plan: INR 49,999
+- Website Development starter plan: INR 4,999
 - Automation Solutions starter plan: INR 19,999
-- E-Commerce Solutions starter plan: INR 34,999
-- Social Media Platforms starter plan: INR 79,999
-- Dating Platforms starter plan: INR 99,999
-- Gaming Solutions starter plan: INR 149,999
+- E-Commerce Solutions starter plan: INR 14,999
 
 Response guidance
 - Be concise and factual.

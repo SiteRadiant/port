@@ -32,7 +32,7 @@ const Hero = () => {
         </h1>
 
         <p className="mt-6 max-w-[640px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-          From mobile apps to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
+          From Websites to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">

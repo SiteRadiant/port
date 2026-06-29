@@ -27,7 +27,7 @@ const Home = () => {
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <SEO
         title="IT Consulting, Software Development & AI Automation"
-        description="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+        description="SiteRadiant builds SEO-ready websites, AI systems, and automation workflows for growing businesses."
         path="/"
         schema={[
           {

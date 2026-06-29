@@ -67,7 +67,7 @@ export default function About() {
         <div className="relative max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[12px] text-zinc-300 mb-8 reveal-up">
             <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-          SITERADIANT TECHNOLOGY 
+          SITERADIANT 
           </div>
 
           <h1 className="text-[44px] sm:text-[64px] lg:text-[78px] font-extrabold leading-[1.03] tracking-tight reveal-up delay-1">

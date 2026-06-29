@@ -31,7 +31,7 @@ const ServicesPage = () => {
             Everything <span className="gradient-text">we build</span>
           </h1>
           <p className="mt-5 text-zinc-400 text-[17px] max-w-[640px]">
-            From mobile apps to AI-powered platforms — explore our full capabilities and click any service to see plans and pricing in INR.
+            From Websites to AI-powered platforms — explore our full capabilities and click any service to see plans and pricing in INR.
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {['Web','E-commerce'].map((t) => (

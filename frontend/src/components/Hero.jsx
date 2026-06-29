@@ -24,17 +24,17 @@ const Hero = () => {
       <div className="relative max-w-[1100px] mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[13px] text-zinc-300 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
-          IT Consulting & Software Development
+          IT Consulting & Website Development
         </div>
 
         <h1 className="text-[44px] sm:text-[58px] lg:text-[76px] font-extrabold leading-[1.05] tracking-tight">
-          Build software that
+          Build Website that
           <br />
           <span className="gradient-text">grows your business</span>
         </h1>
 
         <p className="mt-6 max-w-[640px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-          From mobile apps to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
+          From Websites to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale website that delivers real results.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">

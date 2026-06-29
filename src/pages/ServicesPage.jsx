@@ -29,7 +29,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <SEO
         title="Services — SiteRadiant"
-        description="SiteRadiant builds SEO-ready websites, mobile apps, AI systems, and automation workflows for growing businesses."
+        description="SiteRadiant builds SEO-ready websites, AI systems, and automation workflows for growing businesses."
         path="/services"
       />
       <Navbar />
@@ -52,7 +52,7 @@ export default function ServicesPage() {
           </h1>
 
           <p className="mt-6 max-w-[680px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-            From mobile apps and websites {BRAND} builds the systems, products, and launch plans that help growing businesses scale with clarity.
+            From websites and AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">

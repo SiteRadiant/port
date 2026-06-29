@@ -32,7 +32,7 @@ const Services = () => {
             <span className="text-zinc-500">nothing you don't</span>
           </h2>
           <p className="mt-4 text-zinc-400 text-[16px] max-w-[560px]">
-            Full-stack software services — mobile, web, — under one roof. Click a card to view example plans or start a conversation.
+            Full-stack software services — websites, — under one roof. Click a card to view example plans or start a conversation.
           </p>
         </div>
 

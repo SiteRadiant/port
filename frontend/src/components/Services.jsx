@@ -11,7 +11,7 @@ const iconMap = {
 
 // map home service ids -> pricing modal keys
 const pricingMap = {
-  'mobile-app': 'mobile-app', 'website': 'website', 'ai': 'ai',
+  'website': 'website', 'ai': 'ai',
   'marketing': 'automation', 'sales': 'automation', 'cloud': null,
 };
 
@@ -34,7 +34,7 @@ const Services = () => {
             <span className="text-zinc-500">nothing you don't</span>
           </h2>
           <p className="mt-5 text-zinc-400 text-[16px] max-w-[480px]">
-            Full-stack software services — mobile, web, automation, and AI — under one roof.
+            Full-stack IT services — website, automation, and AI — under one roof.
           </p>
         </div>
 
