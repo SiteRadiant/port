@@ -129,7 +129,7 @@ export default function About() {
             <div className="rounded-2xl border border-red-500/25 bg-[radial-gradient(circle_at_70%_30%,rgba(239,68,68,0.16),transparent_50%)] p-6 office-card">
               <div className="text-xs tracking-[0.12em] uppercase text-red-300 mb-2">Headquarters</div>
               <h3 className="text-2xl font-semibold">Navi Mumbai, Maharashtra</h3>
-              <p className="mt-3 text-zinc-400 leading-relaxed">Wherever Peaceful in Navi Mumbai</p>
+              <p className="mt-3 text-zinc-400 leading-relaxed">Remote</p>
             </div>
           </div>
 
@@ -160,7 +160,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
               <div>
                 <div className="text-zinc-500 mb-1">Legal Name</div>
-                <div className="font-semibold">Global One Logistics And Distribution Private Limited</div>
+                <div className="font-semibold">Global One Logistics And Distribution</div>
               </div>
               <div></div>
               <div>
