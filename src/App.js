@@ -52,14 +52,16 @@ const Home = () => {
         ]}
       />
       <Navbar />
-      <Hero />
-      <LogoCarousel />
-      <Services />
-      <Stats />
-      <Industries />
-      <Process />
-      <Testimonials />
-      <CTA />
+      <main id="main-content">
+        <Hero />
+        <LogoCarousel />
+        <Services />
+        <Stats />
+        <Industries />
+        <Process />
+        <Testimonials />
+        <CTA />
+      </main>
       <Footer />
     </div>
   );
@@ -68,6 +70,9 @@ const Home = () => {
 function App() {
   return (
     <div className="App">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:p-4 focus:bg-red-600 focus:text-white focus:z-[9999]">
+        Skip to main content
+      </a>
       <BrowserRouter>
         <UIProvider>
           <Routes>
