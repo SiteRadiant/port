@@ -22,7 +22,8 @@ Primary site pages
 - /terms - terms and conditions
 
 Important pricing references
-- Website Development starter plan: INR 4,999
+- Landing Page Development Starter Plan: INR 4,999
+- Website Development starter plan: INR 7,999
 - Automation Solutions starter plan: INR 19,999
 - E-Commerce Solutions starter plan: INR 14,999
 
