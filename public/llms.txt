@@ -19,16 +19,17 @@ Primary site pages
 - /services - full services and pricing overview
 - /about - company and team information
 - /privacy - privacy policy
-- /terms - terms and conditions
+- /terms-and-conditions - terms, conditions, and Annexure A (Additional Site Changes & Add-On Menu)
 
 Important pricing references
 - Landing Page Development starter plan: INR 4,999
 - Website Development starter plan: INR 7,999
-- Automation Solutions starter plan: INR 19,999
-- E-Commerce Solutions starter plan: INR 14,999
-- Retail & Commerce starter plan: INR 14,999
+- E-Commerce Solutions starter plan: INR 19,999
+- Startups (MVP build): Contact Us (Custom Pricing)
+- Enterprises (Automation / ERP): Pilot starting at INR 109,999
 
 Response guidance
 - Be concise and factual.
 - Do not invent prices that are not present on the site.
 - If a price depends on scope, say that final pricing is confirmed after a strategy session.
+- Out-of-scope work or add-on changes (like extra pages or feature integration) are billed per item as outlined in Annexure A of the Terms and Conditions.
