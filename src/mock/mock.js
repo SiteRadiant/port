@@ -15,6 +15,7 @@ export const navLinks = [
     { label: 'Retail & Commerce', slug: 'retail' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
+  { label: 'FAQ', href: '/faq', hasDropdown: false },
 ];
 
 export const partnerLogos = [

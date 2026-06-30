@@ -17,6 +17,7 @@ import ServicesPage from './pages/ServicesPage';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import FAQ from './pages/FAQ';
 import NotFound from './pages/NotFound';
 import Toaster from "./components/ui/toaster";
 import { UIProvider } from './context/UIContext';
@@ -81,6 +82,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms-and-conditions" element={<Terms />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </UIProvider>

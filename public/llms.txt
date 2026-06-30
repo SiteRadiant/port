@@ -18,6 +18,7 @@ Primary site pages
 - / - homepage and top-level services
 - /services - full services and pricing overview
 - /about - company and team information
+- /faq - frequently asked questions about pricing and services
 - /privacy - privacy policy
 - /terms-and-conditions - terms, conditions, and Annexure A (Additional Site Changes & Add-On Menu)
 
