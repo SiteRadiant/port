@@ -4,6 +4,7 @@ export const BRAND = 'SiteRadiant';
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
     { label: 'Website Development', slug: 'website' },
+    { label: 'Landing Page Development', slug: 'landing-page' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', slug: 'ecommerce' },
@@ -23,6 +24,7 @@ export const partnerLogos = [
 export const services = [
   { id: 'travel', icon: 'travel', title: 'Travel & Hospitality', desc: 'Booking platforms, travel guides, and hospitality solutions designed to enhance the travel experience.' },
   { id: 'website', icon: 'globe', title: 'Website Development', desc: 'Fast, SEO-optimised websites and web apps built on modern frameworks.' },
+  { id: 'landing_page', icon: 'LayoutTemplate', title: 'Landing Page Development', desc: 'High-converting, stunning few-page websites to capture leads and drive sales.' },
 ];
 
 export const stats = [
@@ -54,7 +56,7 @@ export const testimonials = [
 ];
 
 export const footerLinks = {
-  Services: ['Mobile Apps', 'Websites', 'Marketing Automation', 'Sales Automation', 'AI Services'],
+  Services: ['E-Commerce Store', 'Websites', 'Marketing Automation', 'Sales Automation', 'Landing Page'],
   Industries: ['E-Commerce', 'Social Media', 'Dating Apps', 'Gaming'],
   Company: ['About', 'Case Studies', 'Contact', 'Privacy Policy', 'Terms'],
 };

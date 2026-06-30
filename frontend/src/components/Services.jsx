@@ -1,17 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { services } from '../mock/mock';
-import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight } from 'lucide-react';
+import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, LayoutTemplate } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 
 const iconMap = {
   'smartphone': Smartphone, 'globe': Globe, 'trending-up': TrendingUp,
-  'bar-chart-3': BarChart3, 'sparkles': Sparkles, 'cloud': Cloud,
+  'bar-chart-3': BarChart3, 'sparkles': Sparkles, 'cloud': Cloud, 'layout-template': LayoutTemplate,
 };
 
 // map home service ids -> pricing modal keys
 const pricingMap = {
-  'website': 'website', 'ai': 'ai',
+  'website': 'website', 'ai': 'ai', 'landing_page': 'landing_page',
   'marketing': 'automation', 'sales': 'automation', 'cloud': null,
 };
 

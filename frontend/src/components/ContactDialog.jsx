@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { X, Send, CheckCircle2, Mail, Phone, User, MessageSquare, Building } from 'lucide-react';
 import { fmt } from '../mock/mock';
 
-const services = ['Website Development', 'AI Services', 'Automation Solutions', 'E-Commerce Solutions', 'Other'];
-const budgets = ['Under ₹50,000', '₹50,000 - ₹1,50,000', '₹1,50,000 - ₹5,00,000', '₹5,00,000 - ₹15,00,000', 'Above ₹15,00,000'];
+const services = ['Website Development','Landing Page Development', 'AI Services', 'Automation Solutions', 'E-Commerce Solutions', 'Other'];
+const budgets = ['Under ₹7,000','Under ₹50,000', '₹50,000 - ₹1,50,000', '₹1,50,000 - ₹5,00,000', '₹5,00,000 - ₹15,00,000', 'Above ₹15,00,000'];
 
 const ContactDialog = ({ onClose, prefill }) => {
   const [form, setForm] = useState({

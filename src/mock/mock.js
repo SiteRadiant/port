@@ -3,10 +3,8 @@ export const BRAND = 'SiteRadiant';
 
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
-    { label: 'Mobile App Development', slug: 'mobile-app' },
     { label: 'Website Development', slug: 'website' },
-    { label: 'AI Services', slug: 'ai' },
-    { label: 'Automation Solutions', slug: 'automation' },
+    { label: 'Landing Page Development', slug: 'landing-page' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', slug: 'ecommerce' },
@@ -25,7 +23,7 @@ export const partnerLogos = [
 
 export const services = [
   { id: 'website', icon: 'globe', title: 'Website Development', desc: 'Fast, SEO-optimised websites and web apps built on modern frameworks.' },
-  { id: 'Comming Soonn', icon: 'sparkles', title: 'New Services', desc: 'Upcoming services that will revolutionize your digital experience.' },
+  { id: 'landing_page', icon: 'LayoutTemplate', title: 'Landing Page Development', desc: 'High-converting, stunning few-page websites to capture leads and drive sales.' },
 ];
 
 export const stats = [
@@ -65,14 +63,22 @@ export const fmt = (n) => '₹' + n.toLocaleString('en-IN');
 export const getStartingPrice = (serviceId) => pricingData[serviceId]?.plans?.[0]?.price ?? 0;
 
 export const pricingData = {
+  'landing_page': {
+    title: 'Landing Page',
+    subtitle: 'High-converting, stunning single-page websites to capture leads and drive sales.',
+    tagline: 'Built to Convert',
+    plans: [
+      { name: 'Standard', price: 4999, original: 8999, popular: true, desc: 'High-conversion landing page', features: ['2-3 page scrolling design', 'Mobile-responsive layout', 'Lead capture form integration', 'Basic SEO setup', 'Fast load times'] }
+    ],
+  },
   'website': {
     title: 'Website Development',
     subtitle: 'Fast, SEO-ready websites and web applications built to convert visitors into customers.',
     tagline: 'Crafted to Convert',
     plans: [
-      { name: 'Starter', badge: 'Early Bird', price: 4999, original: 9999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
+      { name: 'Starter', badge: 'Early Bird', price: 7999, original: 10999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
       { name: 'Growth', price: 11499, original: 15999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
-      { name: 'Enterprise', price: 24999, original: 34999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
+      { name: 'Enterprise', price: 21999, original: 34999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
     ],
   },
   'ecommerce': {

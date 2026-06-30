@@ -9,7 +9,7 @@ const iconMap = {
 };
 
 const pricingMap = {
-  'website': 'website', 'ai': 'ai',
+  'website': 'website', 'ai': 'ai', 'landing_page': 'landing_page',
   'marketing': 'automation', 'sales': 'automation', 'cloud': null,
 };
 

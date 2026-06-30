@@ -1,12 +1,16 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, TrendingUp, Globe } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, AppWindow} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
 import { BRAND, fmt, getStartingPrice } from '../mock/mock';
 
 const heroPills = [
   { icon: CheckCircle2, color: 'text-emerald-400', label: 'Website launched in 2 weeks' },
-  { icon: TrendingUp, color: 'text-red-400', label: 'Revenue +127% in 3 months' },
+  { icon: LayoutTemplate, color: 'text-orange-400', label: 'Landing page built in 1 week' },
+  { icon: Globe, color: 'text-sky-400', label: 'Global reach with SEO-ready sites' },
+  { icon: AppWindow, color: 'text-emerald-400', label: 'Custom web apps in 3 weeks' },
+  { icon: Store, color: 'text-green-400', label: 'E-commerce stores with multi-currency support' },
+  { icon: Headphones, color: 'text-purple-400', label: 'Customer support' }
 ];
 
 const Hero = () => {
@@ -43,6 +47,17 @@ const Hero = () => {
             <div className="text-left">
               <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
               <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('website'))}</div>
+              <div className="text-[11px] text-zinc-500">starting price</div>
+            </div>
+          </div>
+          
+          <div className="price-card" onClick={() => openPricing('landing_page')}>
+            <div className="w-10 h-10 rounded-lg bg-orange-500/15 border border-orange-500/25 flex items-center justify-center">
+              <LayoutTemplate size={18} className="text-orange-300" />
+            </div>
+            <div className="text-left">
+              <div className="text-[11px] uppercase tracking-wider text-zinc-500">Landing Page</div>
+              <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('landing_page'))}</div>
               <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>  
