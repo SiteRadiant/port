@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { pricingData } from '../mock/mock';
 import PricingModal from '../components/PricingModal';
 import ContactDialog from '../components/ContactDialog';
@@ -7,13 +8,33 @@ const UIContext = createContext(null);
 
 export const UIProvider = ({ children }) => {
   const [pricingId, setPricingId] = useState(null);
-  const [contactOpen, setContactOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const isContactPath = location.pathname === '/contact';
+  const isContactOpen = isContactPath || searchParams.get('contact') === 'true';
   const [contactPrefill, setContactPrefill] = useState(null);
 
   const openPricing = (id) => setPricingId(id);
   const closePricing = () => setPricingId(null);
-  const openContact = (prefill) => { setContactPrefill(prefill || null); setContactOpen(true); };
-  const closeContact = () => setContactOpen(false);
+  
+  const openContact = (prefill) => { 
+    setContactPrefill(prefill || null); 
+    setSearchParams(prev => {
+      prev.set('contact', 'true');
+      return prev;
+    });
+  };
+  
+  const closeContact = () => { 
+    if (isContactPath) {
+      window.location.href = '/'; // Redirect to home if they landed directly on /contact
+    } else {
+      setSearchParams(prev => {
+        prev.delete('contact');
+        return prev;
+      });
+    }
+  };
 
   return (
     <UIContext.Provider value={{ openPricing, closePricing, openContact, closeContact }}>
@@ -21,7 +42,7 @@ export const UIProvider = ({ children }) => {
       {pricingId && pricingData[pricingId] && (
         <PricingModal serviceId={pricingId} onClose={closePricing} />
       )}
-      {contactOpen && <ContactDialog onClose={closeContact} prefill={contactPrefill} />}
+      {isContactOpen && <ContactDialog onClose={closeContact} prefill={contactPrefill} />}
     </UIContext.Provider>
   );
 };

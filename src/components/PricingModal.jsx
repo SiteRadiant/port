@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, Check, ArrowRight, Sparkles } from 'lucide-react';
 import { pricingData, fmt } from '../mock/mock';
 import { useUI } from '../context/UIContext';
@@ -6,6 +6,7 @@ import { useUI } from '../context/UIContext';
 const PricingModal = ({ serviceId, onClose }) => {
   const data = pricingData[serviceId];
   const { openContact } = useUI();
+  const [includeAddon, setIncludeAddon] = useState(false);
 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -44,9 +45,27 @@ const PricingModal = ({ serviceId, onClose }) => {
           <p className="mt-2 text-[13px] text-zinc-500">Transparent, project-based pricing. No hidden fees. All prices in INR.</p>
         </div>
 
+        <div className="flex justify-center items-center gap-4 py-8 border-b border-white/5 bg-white/[0.02]">
+          <span className={`text-[14px] transition-colors ${!includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>Standard Setup</span>
+          
+          <button 
+            onClick={() => setIncludeAddon(!includeAddon)}
+            className={`relative w-14 h-7 rounded-full p-1 transition-colors duration-300 ease-in-out ${includeAddon ? 'bg-red-500' : 'bg-zinc-700'}`}
+          >
+            <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${includeAddon ? 'translate-x-7' : 'translate-x-0'}`} />
+          </button>
+          
+          <span className={`text-[14px] flex items-center gap-2 transition-colors ${includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>
+            + Managed SEO & Hosting <span className="badge-soft ml-1 hidden sm:inline-flex">Recommended</span>
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-6 sm:p-10">
-          {data.plans.map((plan) => (
-            <div key={plan.name} className={`plan-card ${plan.popular ? 'popular' : ''}`}>
+          {data.plans.map((plan) => {
+            const displayPrice = includeAddon ? plan.price + 5000 : plan.price;
+            
+            return (
+              <div key={plan.name} className={`plan-card ${plan.popular ? 'popular' : ''}`}>
               <div className="flex items-center justify-between mb-3">
                 {plan.badge && <span className="badge-soft">{plan.badge}</span>}
                 {plan.popular && <span className="badge-soft">Most Popular</span>}
@@ -57,9 +76,12 @@ const PricingModal = ({ serviceId, onClose }) => {
                 {plan.original && (
                   <span className="text-zinc-600 line-through text-[16px]">{fmt(plan.original)}</span>
                 )}
-                <span className="text-[34px] font-extrabold text-white tracking-tight">{fmt(plan.price)}</span>
+                <span className="text-[34px] font-extrabold text-white tracking-tight">{fmt(displayPrice)}</span>
               </div>
-              <span className="text-[12px] text-zinc-500">Payment Milestones · exclusive. GST</span>
+              <span className="text-[12px] text-zinc-500">
+                Payment Milestones · exclusive. GST
+                {includeAddon && <span className="block mt-1 text-red-400">Includes ₹5,000 SEO/Hosting Add-on</span>}
+              </span>
 
               <ul className="mt-6 space-y-3 flex-1">
                 {plan.features.map((f) => (
@@ -77,7 +99,8 @@ const PricingModal = ({ serviceId, onClose }) => {
                 Get Started <ArrowRight size={15} />
               </button>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="px-6 sm:px-10 pb-8 text-center">

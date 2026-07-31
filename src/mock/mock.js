@@ -24,7 +24,8 @@ export const partnerLogos = [
 
 export const services = [
   { id: 'website', icon: 'globe', title: 'Website Development', desc: 'Fast, SEO-optimised websites and web apps built on modern frameworks.' },
-  { id: 'landing_page', icon: 'LayoutTemplate', title: 'Landing Page Development', desc: 'High-converting, stunning few-page websites to capture leads and drive sales.' },
+  { id: 'landing_page', icon: 'layout-template', title: 'Landing Page Development', desc: 'High-converting, stunning few-page websites to capture leads and drive sales.' },
+  { id: 'ecommerce', icon: 'shopping-cart', title: 'E-Commerce Solutions', desc: 'Scalable online stores and marketplaces built to drive sales.' },
 ];
 
 export const stats = [

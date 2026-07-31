@@ -10,10 +10,11 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import Industries from './components/Industries';
 import Process from './components/Process';
-import Testimonials from './components/Testimonials';
+import FeaturedWork from './components/FeaturedWork';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
+import FAB from './components/FAB';
 import ServicesPage from './pages/ServicesPage';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
@@ -61,7 +62,8 @@ const Home = () => {
         <Stats />
         <Industries />
         <Process />
-        <Testimonials />
+        <FeaturedWork />
+        {/* <Testimonials /> */}
         <CTA />
       </main>
       <Footer />
@@ -79,6 +81,7 @@ function App() {
         <UIProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Home />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -86,6 +89,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <FAB />
         </UIProvider>
       </BrowserRouter>
       <Analytics />

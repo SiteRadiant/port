@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, AppWindow} from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
 import { BRAND, fmt, getStartingPrice } from '../mock/mock';
@@ -23,7 +24,13 @@ const Hero = () => {
       <div className="absolute inset-0 hero-glow" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[900px] h-[900px] rounded-full bg-red-700/12 blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-[1100px] mx-auto px-6 text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative max-w-[1100px] mx-auto px-6 text-center"
+      >
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[13px] text-zinc-300 mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
           Website Designing & Development Services for Businesses of All Sizes
@@ -61,6 +68,17 @@ const Hero = () => {
               <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>  
+          
+          <div className="price-card hidden md:flex" onClick={() => openPricing('ecommerce')}>
+            <div className="w-10 h-10 rounded-lg bg-green-500/15 border border-green-500/25 flex items-center justify-center">
+              <Store size={18} className="text-green-300" />
+            </div>
+            <div className="text-left">
+              <div className="text-[11px] uppercase tracking-wider text-zinc-500">E-Commerce</div>
+              <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('ecommerce'))}</div>
+              <div className="text-[11px] text-zinc-500">starting price</div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -86,7 +104,7 @@ const Hero = () => {
             Explore Services
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

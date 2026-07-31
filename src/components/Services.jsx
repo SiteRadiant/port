@@ -1,16 +1,18 @@
 import React from 'react';
 import { services } from '../mock/mock';
-import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, ArrowRight, ShoppingCart, LayoutTemplate } from 'lucide-react';
 import { useUI } from '../context/UIContext';
+import { motion } from 'framer-motion';
 
 const iconMap = {
   'smartphone': Smartphone, 'globe': Globe, 'trending-up': TrendingUp,
   'bar-chart-3': BarChart3, 'sparkles': Sparkles, 'cloud': Cloud,
+  'shopping-cart': ShoppingCart, 'layout-template': LayoutTemplate,
 };
 
 const pricingMap = {
   'website': 'website', 'ai': 'ai', 'landing_page': 'landing_page',
-  'marketing': 'automation', 'sales': 'automation', 'cloud': null,
+  'marketing': 'automation', 'sales': 'automation', 'cloud': null, 'ecommerce': 'ecommerce',
 };
 
 const Services = () => {
@@ -22,9 +24,15 @@ const Services = () => {
   };
 
   return (
-    <section className="relative py-20 border-t border-white/5">
+    <section className="relative py-20 border-t border-white/5 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-        <div className="max-w-[720px] mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[720px] mb-10"
+        >
           <p className="eyebrow mb-4">What We Deliver</p>
           <h2 className="text-[34px] sm:text-[44px] font-extrabold leading-[1.06] tracking-tight">
             Everything you need,
@@ -34,13 +42,21 @@ const Services = () => {
           <p className="mt-4 text-zinc-400 text-[16px] max-w-[560px]">
             Full-stack software services — websites, — under one roof. Click a card to view example plans or start a conversation.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => {
+          {services.map((s, idx) => {
             const Icon = iconMap[s.icon] || Sparkles;
             return (
-              <div key={s.id} onClick={() => handleClick(s.id)} className="svc-card rounded-2xl p-6 lg:p-8 group cursor-pointer hover:shadow-lg transition-transform transform hover:-translate-y-1">
+              <motion.div 
+                key={s.id} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                onClick={() => handleClick(s.id)} 
+                className="svc-card rounded-2xl p-6 lg:p-8 group cursor-pointer hover:shadow-lg transition-transform transform hover:-translate-y-1"
+              >
                 <div className="flex items-start justify-between mb-6">
                   <div className="icon-tile group-hover:bg-red-500/10 group-hover:border-red-500/30 transition-colors">
                     <Icon size={18} className="text-zinc-300 group-hover:text-red-300 transition-colors" />
@@ -52,7 +68,7 @@ const Services = () => {
                 <div className="mt-6">
                   <button className="text-sm inline-flex items-center gap-2 text-red-300 hover:text-red-400">View pricing <ArrowUpRight size={14} /></button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
