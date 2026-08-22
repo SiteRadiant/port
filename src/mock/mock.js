@@ -4,10 +4,11 @@ export const BRAND = 'SiteRadiant';
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
     { label: 'Website Development', slug: 'website' },
-    { label: 'Landing Page Development', slug: 'landing-page' },
+    { label: 'Landing Page Development', slug: 'landing_page' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', slug: 'ecommerce' },
+    { label: 'Learning Management System', slug: 'lms' },
   ]},
   { label: 'Industries', href: '/services', hasDropdown: true, items: [
     { label: 'Startups', slug: 'startups' },
@@ -26,6 +27,7 @@ export const services = [
   { id: 'website', icon: 'globe', title: 'Website Development', desc: 'Fast, SEO-optimised websites and web apps built on modern frameworks.' },
   { id: 'landing_page', icon: 'layout-template', title: 'Landing Page Development', desc: 'High-converting, stunning few-page websites to capture leads and drive sales.' },
   { id: 'ecommerce', icon: 'shopping-cart', title: 'E-Commerce Solutions', desc: 'Scalable online stores and marketplaces built to drive sales.' },
+  { id: 'lms', icon: 'graduation-cap', title: 'Learning Management System', desc: 'Scalable e-learning platforms to host courses, manage students, and monetize knowledge.' },
 ];
 
 export const stats = [
@@ -37,7 +39,8 @@ export const stats = [
 
 export const industries = [
   { icon: 'shopping-cart', color: 'orange', title: 'E-Commerce', desc: 'Storefronts, payments, inventory & AI recommendations.' },
-  { icon: 'sparkles', color: 'blue', title: 'Other', desc: 'Custom solutions for any digital business segment.' },
+  { icon: 'graduation-cap', color: 'blue', title: 'Education & LMS', desc: 'Custom e-learning platforms, student dashboards, and course monetization.' },
+  { icon: 'sparkles', color: 'green', title: 'Other', desc: 'Custom solutions for any digital business segment.' },
 ];
 
 export const processSteps = [
@@ -54,8 +57,9 @@ export const testimonials = [
 ];
 
 export const footerLinks = {
-  Services: ['Websites'],
-  Industries: ['E-Commerce','Startups','Enterprises'],
+  Services: ['Websites', 'Landing Pages'],
+  Solutions: ['E-Commerce', 'LMS Platforms', 'Travel'],
+  Industries: ['Startups','Enterprises'],
   Company: ['About', 'Case Studies', 'Contact', 'Privacy Policy', 'Terms'],
 };
 
@@ -93,6 +97,16 @@ export const pricingData = {
       { name: 'Enterprise', price: 89999, original: 149999, popular: false, desc: 'Multi-vendor marketplace', features: ['Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Multi-warehouse fulfilment', 'B2B + B2C flows', 'Mobile apps (iOS + Android)', 'Dedicated team', '12 months support'] },
     ],
   },
+  'lms': {
+    title: 'Learning Management System',
+    subtitle: 'Scalable e-learning platforms to host courses, manage students, and monetize your knowledge.',
+    tagline: 'Teach the World',
+    plans: [
+      { name: 'Starter', price: 16999, original: 24999, popular: false, desc: 'Basic course hosting', features: ['Custom LMS setup', 'Up to 5 courses', 'Student dashboard', 'Razorpay integration', 'Basic progress tracking', '30 days support'] },
+      { name: 'Growth', price: 29999, original: 49999, popular: true, desc: 'Advanced e-learning portal', features: ['Unlimited courses', 'Drip content scheduling', 'Quizzes & assignments', 'Certificates of completion', 'Zoom/Webinar integration', '90 days support'] },
+      { name: 'Enterprise', price: 99999, original: 149999, popular: false, desc: 'Full-scale university platform', features: ['Multi-instructor marketplace', 'Custom video DRM protection', 'Subscription & membership tiers', 'SCORM compliance', 'Mobile apps (iOS + Android)', 'Dedicated DevOps setup', '12 months support'] },
+    ],
+  },
   'startups': {
     title: 'Startups',
     subtitle: 'MVP to Series A — we build the product that gets you funded and your first 10,000 users.',
@@ -115,11 +129,16 @@ export const pricingData = {
 
 // Categories on /services page
 export const serviceCategories = [
-  { num: '01', title: 'Solutions', sub: 'Platform builds for specific verticals', count: '4 offerings', items: [
+  { num: '01', title: 'Services', sub: 'Core web builds', count: '3 offerings', items: [
+    { id: 'website', icon: 'globe', title: 'Website Development', tagline: 'Crafted to Convert', desc: 'Fast, SEO-optimised websites and web apps built on modern frameworks.' },
+    { id: 'landing_page', icon: 'layout-template', title: 'Landing Page Development', tagline: 'Built to Convert', desc: 'High-converting, stunning single-page websites to capture leads and drive sales.' },
+  ]},
+  { num: '02', title: 'Solutions', sub: 'Platform builds for specific verticals', count: '4 offerings', items: [
     { id: 'ecommerce', icon: 'shopping-cart', title: 'E-Commerce Solutions', tagline: 'Commerce, Accelerated', desc: 'Scalable online stores and marketplaces built to drive sales across India and beyond.' },
+    { id: 'lms', icon: 'graduation-cap', title: 'Learning Management System', tagline: 'Teach the World', desc: 'Scalable e-learning platforms to host courses, manage students, and monetize knowledge.' },
     { id: 'travel', icon: 'users', title: 'Travel & Hospitality', tagline: 'Explore the World', desc: 'Booking platforms, travel guides, and hospitality solutions designed to enhance the travel experience.' },
   ]},
-  { num: '02', title: 'Industries', sub: 'Sectors we know inside out', count: '4 offerings', items: [
+  { num: '03', title: 'Industries', sub: 'Sectors we know inside out', count: '4 offerings', items: [
     { id: 'startups', icon: 'rocket', title: 'Startups', tagline: 'From Idea to Launch', desc: 'MVP to Series A — we build the product that gets you funded and your first 10,000 users.' },
     { id: 'enterprises', icon: 'building-2', title: 'Enterprises', tagline: 'Enterprise-Grade, Always', desc: 'ERP systems, business automation, and internal dashboards that transform how large organisations operate.' },
   ]},

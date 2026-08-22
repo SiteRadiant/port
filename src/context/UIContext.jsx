@@ -7,15 +7,27 @@ import ContactDialog from '../components/ContactDialog';
 const UIContext = createContext(null);
 
 export const UIProvider = ({ children }) => {
-  const [pricingId, setPricingId] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
+  
+  const pricingId = searchParams.get('pricing');
   const isContactPath = location.pathname === '/contact';
   const isContactOpen = isContactPath || searchParams.get('contact') === 'true';
   const [contactPrefill, setContactPrefill] = useState(null);
 
-  const openPricing = (id) => setPricingId(id);
-  const closePricing = () => setPricingId(null);
+  const openPricing = (id) => {
+    setSearchParams(prev => {
+      prev.set('pricing', id);
+      return prev;
+    });
+  };
+  
+  const closePricing = () => {
+    setSearchParams(prev => {
+      prev.delete('pricing');
+      return prev;
+    });
+  };
   
   const openContact = (prefill) => { 
     setContactPrefill(prefill || null); 

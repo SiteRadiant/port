@@ -1,5 +1,5 @@
 import React from 'react';
-import {Calendar, Code2, Heart, Lightbulb, Mail, Rocket, ShieldCheck, Users } from 'lucide-react';
+import {Calendar, Code2, Heart, Lightbulb, Mail, Phone, Rocket, ShieldCheck, Users } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
@@ -133,23 +133,38 @@ export default function About() {
             </div>
           </div>
 
-          <div className="mt-4 rounded-xl border border-white/10 bg-[#090b12] px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
-                <Mail size={15} className="text-red-300" />
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-xl border border-white/10 bg-[#090b12] px-5 py-5 flex flex-col gap-1 hover:border-red-500/30 transition-colors">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                  <Mail size={15} className="text-red-300" />
+                </div>
+                <div className="text-xs tracking-[0.12em] uppercase text-zinc-500">Email Support</div>
               </div>
-              <div>
-                <div className="text-xs text-zinc-500">General Support</div>
-                <a className="font-semibold text-red-300 hover:text-red-200" href="mailto:support@siteradiant.co.in">support@siteradiant.co.in</a>
-              </div>
-              <div></div>
-              <div>
-                <div className="text-xs text-zinc-500">Contact Support</div>
-                <a className="font-semibold text-red-300 hover:text-red-200" href="tel:+919372746969">+91 9372746969</a>
-              </div>
+              <a className="font-semibold text-red-300 hover:text-red-200 text-lg" href="mailto:support@siteradiant.co.in">support@siteradiant.co.in</a>
             </div>
-            <div className="text-sm text-zinc-500">Mon-Sat, 3 PM - 9 PM IST</div>
+
+            <div className="rounded-xl border border-white/10 bg-[#090b12] px-5 py-5 flex flex-col gap-1 hover:border-red-500/30 transition-colors">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                  <Phone size={15} className="text-red-300" />
+                </div>
+                <div className="text-xs tracking-[0.12em] uppercase text-zinc-500">Sales & Enquiries</div>
+              </div>
+              <a className="font-semibold text-red-300 hover:text-red-200 text-lg" href="tel:+917208999095">+91 72089 99095</a>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-[#090b12] px-5 py-5 flex flex-col gap-1 hover:border-red-500/30 transition-colors">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                  <Phone size={15} className="text-red-300" />
+                </div>
+                <div className="text-xs tracking-[0.12em] uppercase text-zinc-500">Technical Support</div>
+              </div>
+              <a className="font-semibold text-red-300 hover:text-red-200 text-lg" href="tel:+919987114604">+91 99871 14604</a>
+            </div>
           </div>
+          <div className="mt-4 text-sm text-zinc-500 text-center md:text-left">Mon-Sat, 3 PM - 9 PM IST</div>
         </div>
       </section>
 

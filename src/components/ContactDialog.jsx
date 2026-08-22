@@ -3,7 +3,7 @@ import { X, Send, CheckCircle2, Mail, Phone, User, MessageSquare, Building, Load
 import { fmt } from '../mock/mock';
 import { sendLeadToZohoFlow } from '../lib/zohoWebhook';
 
-const services = ['Website Development', 'Landing Page', 'E-Commerce Solutions', 'Startups', 'Enterprises', 'Other'];
+const services = ['Website Development', 'Landing Page', 'E-Commerce Solutions', 'Learning Management System', 'Startups', 'Enterprises', 'Other'];
 const budgets = ['Under ₹10,000', '₹10,000 - ₹30,000', '₹30,000 - ₹1,00,000', '₹1,00,000 - ₹5,00,000', 'Above ₹5,00,000'];
 
 const ContactDialog = ({ onClose, prefill }) => {

@@ -56,7 +56,7 @@ const PricingModal = ({ serviceId, onClose }) => {
           </button>
           
           <span className={`text-[14px] flex items-center gap-2 transition-colors ${includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>
-            + Managed SEO & Hosting <span className="badge-soft ml-1 hidden sm:inline-flex">Recommended</span>
+            + Managed Hosting <span className="badge-soft ml-1 hidden sm:inline-flex">Recommended</span>
           </span>
         </div>
 
@@ -80,7 +80,7 @@ const PricingModal = ({ serviceId, onClose }) => {
               </div>
               <span className="text-[12px] text-zinc-500">
                 Payment Milestones · exclusive. GST
-                {includeAddon && <span className="block mt-1 text-red-400">Includes ₹5,000 SEO/Hosting Add-on</span>}
+                {includeAddon && <span className="block mt-1 text-red-400">Includes ₹5,000 Hosting Add-on</span>}
               </span>
 
               <ul className="mt-6 space-y-3 flex-1">

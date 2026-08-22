@@ -1,6 +1,6 @@
 import React from 'react';
 import { services } from '../mock/mock';
-import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, ArrowRight, ShoppingCart, LayoutTemplate } from 'lucide-react';
+import { Smartphone, Globe, TrendingUp, BarChart3, Sparkles, Cloud, ArrowUpRight, ArrowRight, ShoppingCart, LayoutTemplate, GraduationCap } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 import { motion } from 'framer-motion';
 
@@ -8,11 +8,12 @@ const iconMap = {
   'smartphone': Smartphone, 'globe': Globe, 'trending-up': TrendingUp,
   'bar-chart-3': BarChart3, 'sparkles': Sparkles, 'cloud': Cloud,
   'shopping-cart': ShoppingCart, 'layout-template': LayoutTemplate,
+  'graduation-cap': GraduationCap,
 };
 
 const pricingMap = {
   'website': 'website', 'ai': 'ai', 'landing_page': 'landing_page',
-  'marketing': 'automation', 'sales': 'automation', 'cloud': null, 'ecommerce': 'ecommerce',
+  'marketing': 'automation', 'sales': 'automation', 'cloud': null, 'ecommerce': 'ecommerce', 'lms': 'lms',
 };
 
 const Services = () => {

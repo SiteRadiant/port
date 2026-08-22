@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { industries } from '../mock/mock';
-import { ShoppingCart, Users, Heart, Gamepad2, Sparkles, ArrowRight } from 'lucide-react';
+import { ShoppingCart, Users, Heart, Gamepad2, Sparkles, ArrowRight, GraduationCap } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 
-const iconMap = { 'shopping-cart': ShoppingCart, 'users': Users, 'heart': Heart, 'gamepad-2': Gamepad2, 'sparkles': Sparkles };
+const iconMap = { 'shopping-cart': ShoppingCart, 'users': Users, 'heart': Heart, 'gamepad-2': Gamepad2, 'sparkles': Sparkles, 'graduation-cap': GraduationCap };
 const colorMap = {
   orange: { bg: 'bg-orange-500/10', border: 'border-orange-500/25', text: 'text-orange-400' },
   red: { bg: 'bg-red-500/10', border: 'border-red-500/25', text: 'text-red-400' },
@@ -13,7 +13,7 @@ const colorMap = {
   blue: { bg: 'bg-sky-500/10', border: 'border-sky-500/25', text: 'text-sky-400' },
 };
 
-const slugMap = { 'E-Commerce': 'ecommerce', 'Other': null };
+const slugMap = { 'E-Commerce': 'ecommerce', 'Education & LMS': 'lms', 'Other': null };
 
 const Industries = () => {
   useNavigate();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, AppWindow} from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, AppWindow, GraduationCap} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
@@ -46,7 +46,7 @@ const Hero = () => {
           From Websites to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">
           <div className="price-card" onClick={() => openPricing('website')}>
             <div className="w-10 h-10 rounded-lg bg-red-500/15 border border-red-500/25 flex items-center justify-center">
               <Globe size={18} className="text-red-300" />
@@ -69,13 +69,24 @@ const Hero = () => {
             </div>
           </div>  
           
-          <div className="price-card hidden md:flex" onClick={() => openPricing('ecommerce')}>
+          <div className="price-card flex" onClick={() => openPricing('ecommerce')}>
             <div className="w-10 h-10 rounded-lg bg-green-500/15 border border-green-500/25 flex items-center justify-center">
               <Store size={18} className="text-green-300" />
             </div>
             <div className="text-left">
               <div className="text-[11px] uppercase tracking-wider text-zinc-500">E-Commerce</div>
               <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('ecommerce'))}</div>
+              <div className="text-[11px] text-zinc-500">starting price</div>
+            </div>
+          </div>
+
+          <div className="price-card flex" onClick={() => openPricing('lms')}>
+            <div className="w-10 h-10 rounded-lg bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center">
+              <GraduationCap size={18} className="text-indigo-300" />
+            </div>
+            <div className="text-left">
+              <div className="text-[11px] uppercase tracking-wider text-zinc-500">LMS System</div>
+              <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('lms'))}</div>
               <div className="text-[11px] text-zinc-500">starting price</div>
             </div>
           </div>
