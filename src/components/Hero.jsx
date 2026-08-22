@@ -96,7 +96,7 @@ const Hero = () => {
           {heroPills.map((p, i) => {
             const Icon = p.icon;
             return (
-              <div key={i} className="pill">
+              <div key={i} className="pill hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-0.5 cursor-default">
                 <Icon size={14} className={p.color} />
                 {p.label}
               </div>

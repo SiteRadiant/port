@@ -13,7 +13,7 @@ export const navLinks = [
   { label: 'Industries', href: '/services', hasDropdown: true, items: [
     { label: 'Startups', slug: 'startups' },
     { label: 'Enterprises', slug: 'enterprises' },
-    { label: 'Retail & Commerce', slug: 'retail' },
+    { label: 'Retail & Commerce', slug: 'ecommerce' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
   { label: 'FAQ', href: '/faq', hasDropdown: false },

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => (
   <footer className="bg-transparent border-t border-white/5 py-8 mt-12">
     <div className="max-w-6xl mx-auto px-6 text-zinc-300 text-sm flex flex-col md:flex-row items-center justify-between gap-6">
-      <div className="text-center md:text-left">© {new Date().getFullYear()} Global One Logistics And Distribution. All rights reserved.</div>
+      <div className="text-center md:text-left">&copy; {new Date().getFullYear()} Global One Logistics And Distribution. All rights reserved.</div>
       
       <div className="flex items-center gap-6">
         <a href="https://x.com/siteradiant" target="_blank" rel="noreferrer" aria-label="Twitter / X" className="hover:text-white transition-colors flex items-center gap-2">

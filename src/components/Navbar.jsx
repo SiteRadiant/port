@@ -60,7 +60,7 @@ const Navbar = () => {
                 </button>
               )}
               {link.hasDropdown && hovered === link.label && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[240px]">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[240px] animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="bg-[#111114] border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
                     {link.items.map((item) => (
                       <button
@@ -94,7 +94,7 @@ const Navbar = () => {
       </div>
 
       {openMobile && (
-        <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3">
+        <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3 animate-in fade-in slide-in-from-top-4 duration-300">
           {navLinks.map((link) => (
             link.href && link.href !== '#' ? (
               <Link key={link.label} to={link.href} className="block w-full text-left text-zinc-300 py-2" onClick={() => setOpenMobile(false)}>
