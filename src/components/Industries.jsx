@@ -39,8 +39,8 @@ const Industries = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {industries.map((ind) => {
-            const Icon = iconMap[ind.icon];
-            const c = colorMap[ind.color];
+            const Icon = iconMap[ind.icon] || Sparkles;
+            const c = colorMap[ind.color] || colorMap.green;
             return (
               <div key={ind.title} onClick={() => handle(ind.title)} className="industry-card cursor-pointer group">
                 <div className={`w-10 h-10 rounded-lg ${c.bg} ${c.border} border flex items-center justify-center mb-6`}>
