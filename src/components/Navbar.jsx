@@ -8,7 +8,7 @@ const Logo = () => (
   <Link to="/" className="flex items-center gap-3 group">
     <div className="relative">
       <div className="absolute -inset-1 rounded-2xl blur-[10px] opacity-20 bg-gradient-to-br from-red-600 to-red-800" />
-      <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center border border-white/8 overflow-hidden">
+      <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center overflow-hidden">
         <img
           src="/android-chrome-192x192.png"
           alt="SiteRadiant logo"
