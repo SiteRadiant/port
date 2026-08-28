@@ -4,16 +4,17 @@ export const BRAND = 'SiteRadiant';
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
     { label: 'Website Development', href: '/website-development' },
+    { label: 'Web Application Development', href: '/web-application-development' },
     { label: 'Landing Page Development', href: '/landing-page-development' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', href: '/ecommerce-development' },
     { label: 'Learning Management System', href: '/lms-development' },
   ]},
-  { label: 'Industries', href: '/services', hasDropdown: true, items: [
-    { label: 'Startups', slug: 'startups' },
-    { label: 'Enterprises', slug: 'enterprises' },
-    { label: 'Retail & Commerce', href: '/ecommerce-development' },
+  { label: 'Resources', href: '#', hasDropdown: true, items: [
+    { label: 'Website Cost in India', href: '/website-cost-india' },
+    { label: 'Website vs Landing Page', href: '/website-vs-landing-page' },
+    { label: 'SEO Friendly Website', href: '/seo-friendly-website' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
   { label: 'FAQ', href: '/faq', hasDropdown: false },
@@ -57,10 +58,9 @@ export const testimonials = [
 ];
 
 export const footerLinks = {
-  Services: ['Websites', 'Landing Pages'],
-  Solutions: ['E-Commerce', 'LMS Platforms', 'Travel'],
-  Industries: ['Startups','Enterprises'],
-  Company: ['About', 'Case Studies', 'Contact', 'Privacy Policy', 'Terms'],
+  Services: ['Websites', 'Web Apps', 'Landing Pages', 'E-Commerce'],
+  Resources: ['Website Cost India', 'Website vs Landing Page', 'SEO Guidelines'],
+  Company: ['About', 'FAQ', 'Contact', 'Privacy Policy', 'Terms'],
 };
 
 // Pricing data (INR)
@@ -74,7 +74,7 @@ export const pricingData = {
     subtitle: 'High-converting, stunning single-page websites to capture leads and drive sales.',
     tagline: 'Built to Convert',
     plans: [
-      { name: 'Standard', price: 4999, original: 8999, popular: true, desc: 'High-conversion landing page', features: ['2-3 page scrolling design', 'Mobile-responsive layout', 'Lead capture form integration', 'Basic SEO setup', 'Fast load times'] }
+      { name: 'Standard', price: 4999, original: 8999, popular: true, desc: 'High-conversion landing page', features: ['2-3 section scrolling design', 'Mobile-responsive layout', 'Lead capture form integration', 'Basic SEO setup', 'Fast load times', '14 days post-launch support'] }
     ],
   },
   'website': {
@@ -83,8 +83,8 @@ export const pricingData = {
     tagline: 'Crafted to Convert',
     plans: [
       { name: 'Starter', badge: 'Early Bird', price: 19999, original: 24999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
-      { name: 'Growth', price: 34999, original: 44999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
-      { name: 'Enterprise', price: 79999, original: 99999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
+      { name: 'Growth', price: 34999, original: 44999, popular: true, desc: 'Full-stack web app with CMS', features: ['Everything in Starter', 'Up to 15 pages', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days support'] },
+      { name: 'Enterprise', price: 79999, original: 99999, popular: false, desc: 'Complex portals and platforms', features: ['Everything in Growth', 'Up to 25+ pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', '6 months support'] },
     ],
   },
   'ecommerce': {
@@ -93,8 +93,8 @@ export const pricingData = {
     tagline: 'Commerce, Accelerated',
     plans: [
       { name: 'Starter', price: 19999, original: 24999,popular: false, desc: 'Custom store', features: ['Custom store setup', 'Up to 50 products', 'Razorpay / Stripe payments', 'Mobile-responsive theme', 'Basic SEO', '30 days support'] },
-      { name: 'Growth', price: 29999, original: 49999, popular: true, desc: 'Custom storefront with AI search', features: ['Custom Next.js storefront', 'Headless CMS', 'AI-powered search & recommendations', 'Inventory + order management', 'Multi-language', 'Loyalty programme', '90 days support'] },
-      { name: 'Enterprise', price: 89999, original: 149999, popular: false, desc: 'Multi-vendor marketplace', features: ['Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Multi-warehouse fulfilment', 'B2B + B2C flows', 'Mobile apps (iOS + Android)', 'Dedicated team', '12 months support'] },
+      { name: 'Growth', price: 29999, original: 49999, popular: true, desc: 'Custom storefront with AI search', features: ['Everything in Starter', 'Custom Next.js storefront', 'Headless CMS', 'Inventory + order management', 'Multi-language', '45 days support'] },
+      { name: 'Enterprise', price: 89999, original: 149999, popular: false, desc: 'Multi-vendor marketplace', features: ['Everything in Growth', 'Marketplace with vendor onboarding', 'Custom commission & payout engine', 'Dedicated DevOps setup', '60 days support'] },
     ],
   },
   'lms': {
@@ -103,8 +103,8 @@ export const pricingData = {
     tagline: 'Teach the World',
     plans: [
       { name: 'Starter', price: 19999, original: 29999, popular: false, desc: 'Basic course hosting', features: ['Custom LMS setup', 'Up to 5 courses', 'Student dashboard', 'Razorpay integration', 'Basic progress tracking', '30 days support'] },
-      { name: 'Growth', price: 34999, original: 49999, popular: true, desc: 'Advanced e-learning portal', features: ['Unlimited courses', 'Drip content scheduling', 'Quizzes & assignments', 'Certificates of completion', 'Zoom/Webinar integration', '90 days support'] },
-      { name: 'Enterprise', price: 89999, original: 129999, popular: false, desc: 'Full-scale university platform', features: ['Multi-instructor marketplace', 'Custom video DRM protection', 'Subscription & membership tiers', 'SCORM compliance', 'Mobile apps (iOS + Android)', 'Dedicated DevOps setup', '12 months support'] },
+      { name: 'Growth', price: 34999, original: 49999, popular: true, desc: 'Advanced e-learning portal', features: ['Everything in Starter', 'Unlimited courses', 'Drip content scheduling', 'Quizzes & assignments', 'Certificates of completion', 'Zoom/Webinar integration', '90 days support'] },
+      { name: 'Enterprise', price: 89999, original: 129999, popular: false, desc: 'Full-scale university platform', features: ['Everything in Growth', 'Multi-instructor marketplace', 'Custom video DRM protection', 'Subscription & membership tiers', 'SCORM compliance', 'Mobile apps (iOS + Android)', '12 months support'] },
     ],
   },
   'startups': {
@@ -121,8 +121,8 @@ export const pricingData = {
     tagline: 'Enterprise-Grade, Always',
     plans: [
       { name: 'Pilot', price: 109999, popular: false, desc: 'Single-department automation', features: ['Process audit', 'Custom internal tool', 'SSO integration', 'Training & rollout', '60 days support'] },
-      { name: 'Suite', price: 209999, popular: true, desc: 'Cross-functional platform', features: ['ERP / CRM customisation', 'Workflow automation', 'BI dashboards', 'Multi-team rollout', '90 days support'] },
-      { name: 'Enterprise', price: 399999, popular: false, desc: 'Org-wide digital transformation', features: ['Custom platform build', 'Legacy system migration', 'Compliance (ISO / SOC 2)', 'Dedicated delivery team', '12 months support'] },
+      { name: 'Suite', price: 209999, popular: true, desc: 'Cross-functional platform', features: ['Everything in Pilot', 'ERP / CRM customisation', 'Workflow automation', 'BI dashboards', 'Multi-team rollout', '90 days support'] },
+      { name: 'Enterprise', price: 399999, popular: false, desc: 'Org-wide digital transformation', features: ['Everything in Suite', 'Custom platform build', 'Legacy system migration', 'Compliance (ISO / SOC 2)', 'Dedicated delivery team', '12 months support'] },
     ],
   },
 };

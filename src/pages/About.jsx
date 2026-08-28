@@ -3,6 +3,7 @@ import {Calendar, Code2, Heart, Lightbulb, Mail, Phone, Rocket, ShieldCheck, Use
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import { StructuredData } from '../components/StructuredData';
 
 const topStats = [
   { icon: Users, value: '60+', label: 'Specialists' },
@@ -57,6 +58,7 @@ export default function About() {
         description="SiteRadiant builds technology that helps ambitious teams launch, scale, and grow faster."
         path="/about"
       />
+      <StructuredData type="Organization" />
       <Navbar />
 
       <section className="relative pt-28 pb-20">
@@ -77,7 +79,7 @@ export default function About() {
           </h1>
 
           <p className="mt-7 text-zinc-400 text-[18px] max-w-3xl mx-auto leading-relaxed reveal-up delay-2">
-            From strategy to shipping, SiteRadiant helps teams launch modern websites, software products, and automation systems with precision, speed, and measurable impact.
+            From strategy to shipping, SiteRadiant helps teams launch modern websites, e-commerce platforms, and custom software with precision, speed, and measurable impact.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3 justify-center reveal-up delay-3">

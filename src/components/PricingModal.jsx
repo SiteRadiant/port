@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { X, Check, ArrowRight, Sparkles } from 'lucide-react';
-import { pricingData, fmt } from '../mock/mock';
+import { X, Check, ArrowRight, Sparkles, Globe } from 'lucide-react';
+import { pricingData } from '../mock/mock';
 import { useUI } from '../context/UIContext';
+import { useCurrency } from '../hooks/useCurrency';
 
 const PricingModal = ({ serviceId, onClose }) => {
   const data = pricingData[serviceId];
   const { openContact } = useUI();
   const [includeAddon, setIncludeAddon] = useState(false);
+  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -42,7 +44,7 @@ const PricingModal = ({ serviceId, onClose }) => {
             {data.title} <span className="text-zinc-500">plans &amp; pricing</span>
           </h2>
           <p className="mt-3 text-zinc-400 max-w-[640px]">{data.subtitle}</p>
-          <p className="mt-2 text-[13px] text-zinc-500">Transparent, project-based pricing. No hidden fees. All prices in INR.</p>
+          <p className="mt-2 text-[13px] text-zinc-500">Transparent, project-based pricing. No hidden fees.</p>
         </div>
 
         <div className="flex justify-center items-center gap-4 py-8 border-b border-white/5 bg-white/[0.02]">
@@ -74,20 +76,20 @@ const PricingModal = ({ serviceId, onClose }) => {
               <p className="mt-1.5 text-[13px] text-zinc-400 min-h-[36px]">{plan.desc}</p>
               <div className="mt-5 flex items-baseline gap-2">
                 {plan.original && (
-                  <span className="text-zinc-600 line-through text-[16px]">{fmt(plan.original)}</span>
+                  <span className="text-zinc-600 line-through text-[16px]">{formatPrice(plan.original)}</span>
                 )}
-                <span className="text-[34px] font-extrabold text-white tracking-tight">{fmt(displayPrice)}</span>
+                <span className="text-[34px] font-extrabold text-white tracking-tight">{formatPrice(displayPrice)}</span>
               </div>
               <span className="text-[12px] text-zinc-500">
                 Payment Milestones · exclusive. GST
-                {includeAddon && <span className="block mt-1 text-red-400">Includes ₹5,000 Hosting Add-on</span>}
+                {includeAddon && <span className="block mt-1 text-red-400">Includes {formatPrice(5000)} Hosting Add-on</span>}
               </span>
 
               <ul className="mt-6 space-y-3 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-zinc-300">
                     <Check size={15} className="text-red-400 mt-0.5 flex-shrink-0" />
-                    <span>{f}</span>
+                    <span className={f.startsWith('Everything in') ? 'font-bold text-white' : ''}>{f}</span>
                   </li>
                 ))}
               </ul>

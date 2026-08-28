@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Briefcase, CheckCircle2, Globe, Star, TrendingUp, LayoutTemplate, AppWindow, Store, Headphones } from 'lucide-react';
+import { ArrowRight, Briefcase, CheckCircle2, Globe, Star, TrendingUp, LayoutTemplate, AppWindow, Store, Headphones, GraduationCap } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import LogoCarousel from '../components/LogoCarousel';
 import Services from '../components/Services';
 import Stats from '../components/Stats';
 import Industries from '../components/Industries';
 import Process from '../components/Process';
-import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import { BRAND, fmt, getStartingPrice } from '../mock/mock';
+import { BRAND, getStartingPrice } from '../mock/mock';
 import { useUI } from '../context/UIContext';
+import { useCurrency } from '../hooks/useCurrency';
 
 const heroPills = [
   { icon: CheckCircle2, color: 'text-emerald-400', label: 'Fast websites with SEO built in' },
@@ -25,6 +25,7 @@ const heroPills = [
 
 export default function ServicesPage() {
   const { openPricing, openContact } = useUI();
+  const { formatPrice } = useCurrency();
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -59,29 +60,51 @@ export default function ServicesPage() {
               From websites and AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">
               <div className="price-card" onClick={() => openPricing('website')}>
                 <div className="w-10 h-10 rounded-lg bg-red-500/15 border border-red-500/25 flex items-center justify-center">
                   <Globe size={18} className="text-red-300" />
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('website'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('website'))}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>
+              
               <div className="price-card" onClick={() => openPricing('landing_page')}>
                 <div className="w-10 h-10 rounded-lg bg-orange-500/15 border border-orange-500/25 flex items-center justify-center">
                   <LayoutTemplate size={18} className="text-orange-300" />
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">Landing Page</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{fmt(getStartingPrice('landing_page'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('landing_page'))}</div>
+                  <div className="text-[11px] text-zinc-500">starting price</div>
+                </div>
+              </div>  
+              
+              <div className="price-card flex" onClick={() => openPricing('ecommerce')}>
+                <div className="w-10 h-10 rounded-lg bg-green-500/15 border border-green-500/25 flex items-center justify-center">
+                  <Store size={18} className="text-green-300" />
+                </div>
+                <div className="text-left">
+                  <div className="text-[11px] uppercase tracking-wider text-zinc-500">E-Commerce</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('ecommerce'))}</div>
+                  <div className="text-[11px] text-zinc-500">starting price</div>
+                </div>
+              </div>
+
+              <div className="price-card flex" onClick={() => openPricing('lms')}>
+                <div className="w-10 h-10 rounded-lg bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center">
+                  <GraduationCap size={18} className="text-indigo-300" />
+                </div>
+                <div className="text-left">
+                  <div className="text-[11px] uppercase tracking-wider text-zinc-500">LMS System</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('lms'))}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>
             </div>
-            
 
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               {heroPills.map((pill, index) => {
@@ -114,7 +137,6 @@ export default function ServicesPage() {
       <Stats />
       <Industries />
       <Process />
-      <Testimonials />
       <CTA />
       </main>
       <Footer />

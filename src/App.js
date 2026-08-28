@@ -27,17 +27,18 @@ import WebsiteDev from './pages/services/websitedevelopment';
 import LandingPageDev from './pages/services/landingpagedevelopment';
 import EcommerceDev from './pages/services/ecommercedevelopment';
 import LmsDev from './pages/services/lmsdevelopment';
+import WebAppDev from './pages/services/webappdevelopment';
 import WebCostArticle from './pages/articles/websitecostindia';
 import WebVsLandingArticle from './pages/articles/websitevslandingpage';
-
+import SeoFriendlyWebsite from './pages/articles/seofriendlywebsite';
 
 const Home = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <SEO
-        title="Website Development & AI Automation"
-        description="SiteRadiant is a premier agency building SEO-ready websites, robust e-commerce platforms, intelligent AI systems, and custom automation workflows for scaling businesses."
+        title="Website Development & E-commerce Solutions"
+        description="SiteRadiant is a premier agency building SEO-ready websites, robust e-commerce platforms, and custom software for scaling businesses."
         path="/"
         schema={[
           {
@@ -58,7 +59,7 @@ const Home = () => {
               target: `${window.location.origin}/services`,
               'query-input': 'required name=search_term_string',
             },
-          },
+          }
         ]}
       />
       <Navbar />
@@ -70,7 +71,6 @@ const Home = () => {
         <Industries />
         <Process />
         <FeaturedWork />
-        {/* <Testimonials /> */}
         <CTA />
       </main>
       <Footer />
@@ -81,9 +81,6 @@ const Home = () => {
 function App() {
   return (
     <div className="App">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:p-4 focus:bg-red-600 focus:text-white focus:z-[9999]">
-        Skip to main content
-      </a>
       <BrowserRouter>
         <UIProvider>
           <Routes>
@@ -92,9 +89,11 @@ function App() {
             <Route path="/website-development" element={<WebsiteDev />} />
             <Route path="/landing-page-development" element={<LandingPageDev />} />
             <Route path="/ecommerce-development" element={<EcommerceDev />} />
+            <Route path="/web-application-development" element={<WebAppDev />} />
             <Route path="/lms-development" element={<LmsDev />} />
             <Route path="/website-cost-india" element={<WebCostArticle />} />
             <Route path="/website-vs-landing-page" element={<WebVsLandingArticle />} />
+            <Route path="/seo-friendly-website" element={<SeoFriendlyWebsite />} />
 
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<About />} />
