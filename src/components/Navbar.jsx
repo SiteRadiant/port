@@ -30,6 +30,8 @@ const Navbar = () => {
     if (item.slug) {
       navigate('/services');
       setTimeout(() => openPricing(item.slug), 250);
+    } else if (item.href) {
+      navigate(item.href);
     }
     setHovered(null);
     setOpenMobile(false);
@@ -64,7 +66,7 @@ const Navbar = () => {
                   <div className="bg-[#111114] border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
                     {link.items.map((item) => (
                       <button
-                        key={item.slug}
+                        key={item.slug || item.href}
                         onClick={() => handleItemClick(item)}
                         className="w-full text-left text-sm text-zinc-300 hover:text-white hover:bg-red-500/10 px-3 py-2 rounded-lg transition-colors"
                       >

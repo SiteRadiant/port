@@ -3,17 +3,17 @@ export const BRAND = 'SiteRadiant';
 
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
-    { label: 'Website Development', slug: 'website' },
-    { label: 'Landing Page Development', slug: 'landing_page' },
+    { label: 'Website Development', href: '/website-development' },
+    { label: 'Landing Page Development', href: '/landing-page-development' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
-    { label: 'E-Commerce', slug: 'ecommerce' },
-    { label: 'Learning Management System', slug: 'lms' },
+    { label: 'E-Commerce', href: '/ecommerce-development' },
+    { label: 'Learning Management System', href: '/lms-development' },
   ]},
   { label: 'Industries', href: '/services', hasDropdown: true, items: [
     { label: 'Startups', slug: 'startups' },
     { label: 'Enterprises', slug: 'enterprises' },
-    { label: 'Retail & Commerce', slug: 'ecommerce' },
+    { label: 'Retail & Commerce', href: '/ecommerce-development' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
   { label: 'FAQ', href: '/faq', hasDropdown: false },

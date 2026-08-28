@@ -23,6 +23,13 @@ import FAQ from './pages/FAQ';
 import NotFound from './pages/NotFound';
 import Toaster from "./components/ui/toaster";
 import { UIProvider } from './context/UIContext';
+import WebsiteDev from './pages/services/websitedevelopment';
+import LandingPageDev from './pages/services/landingpagedevelopment';
+import EcommerceDev from './pages/services/ecommercedevelopment';
+import LmsDev from './pages/services/lmsdevelopment';
+import WebCostArticle from './pages/articles/websitecostindia';
+import WebVsLandingArticle from './pages/articles/websitevslandingpage';
+
 
 const Home = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -82,6 +89,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Home />} />
+            <Route path="/website-development" element={<WebsiteDev />} />
+            <Route path="/landing-page-development" element={<LandingPageDev />} />
+            <Route path="/ecommerce-development" element={<EcommerceDev />} />
+            <Route path="/lms-development" element={<LmsDev />} />
+            <Route path="/website-cost-india" element={<WebCostArticle />} />
+            <Route path="/website-vs-landing-page" element={<WebVsLandingArticle />} />
+
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
