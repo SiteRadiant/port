@@ -86,9 +86,9 @@ export const pricingData = {
     subtitle: 'Fast, SEO-ready websites and web applications built to convert visitors into customers.',
     tagline: 'Crafted to Convert',
     plans: [
-      { name: 'Starter', badge: 'Early Bird', price: 19999, original: 24999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
-      { name: 'Growth', price: 34999, original: 44999, popular: true, desc: 'Full-stack web app with CMS', features: ['Everything in Starter', 'Up to 15 pages', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days support'] },
-      { name: 'Enterprise', price: 79999, original: 99999, popular: false, desc: 'Complex portals and platforms', features: ['Everything in Growth', 'Up to 25+ pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', '6 months support'] },
+      { name: 'Starter', badge: 'Early Bird', price: 7999, original: 10999, popular: false, desc: 'Clean, fast marketing websites', features: ['Up to 4 pages', 'Mobile-responsive design', 'Basic SEO setup', 'Contact form', '14 days post-launch support'] },
+      { name: 'Growth', price: 11499, original: 15999, popular: true, desc: 'Full-stack web app with CMS', features: ['Up to 15 pages / screens', 'Django + React stack', 'CMS for content updates', 'Advanced SEO & structured data', 'Payment gateway integration', 'Core Web Vitals optimisation', '60 days post-launch support'] },
+      { name: 'Enterprise', price: 21999, original: 34999, popular: false, desc: 'Complex portals and platforms', features: ['Up to 25 pages', 'Multi-tenant architecture', 'Custom ERP / CRM integration', 'SSO / OAuth2 authentication', '99.9% uptime SLA', 'Dedicated DevOps setup', '6 months post-launch support'] },
     ],
   },
   'ecommerce': {
