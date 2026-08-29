@@ -12,7 +12,7 @@ const SEO = ({
   schema,
 }) => {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const canonicalUrl = new URL(path, window.location.origin).href;
+  const canonicalUrl = `https://www.siteradiant.co.in${path}`;
 
   return (
     <Helmet>

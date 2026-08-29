@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, App
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
-import { BRAND, getStartingPrice } from '../mock/mock';
+import { getStartingPrice } from '../mock/mock';
 import { useCurrency } from '../hooks/useCurrency';
 
 const heroPills = [
@@ -39,13 +39,13 @@ const Hero = () => {
         </div>
 
         <h1 className="text-[44px] sm:text-[58px] lg:text-[76px] font-extrabold leading-[1.05] tracking-tight">
-          Build software that
+          Website Development
           <br />
-          <span className="gradient-text">grows your business</span>
+          <span className="gradient-text">Company in India</span>
         </h1>
 
-        <p className="mt-6 max-w-[640px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-          From Websites to AI-powered automation — {BRAND} partners with businesses to build, launch, and scale software that delivers real results.
+        <p className="mt-6 max-w-[680px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
+          We design and develop fast, SEO-friendly websites, custom e-commerce stores, custom software applications, and AI-powered automation solutions that grow business revenues.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">

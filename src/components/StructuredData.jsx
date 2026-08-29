@@ -51,6 +51,27 @@ export const StructuredData = ({ type, data }) => {
     };
   }
 
+  if (type === 'LocalBusiness') {
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SiteRadiant",
+      "url": "https://www.siteradiant.co.in",
+      "logo": "https://www.siteradiant.co.in/android-chrome-512x512.png",
+      "image": "https://www.siteradiant.co.in/android-chrome-512x512.png",
+      "description": "SiteRadiant is a premier agency building SEO-ready websites, intelligent AI systems, and custom automation workflows for scaling businesses.",
+      "telephone": "+91-0000000000",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Navi Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      ...data
+    };
+  }
+
   return (
     <Helmet>
       <script type="application/ld+json">

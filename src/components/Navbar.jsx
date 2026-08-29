@@ -96,19 +96,34 @@ const Navbar = () => {
       </div>
 
       {openMobile && (
-        <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3 animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3 overflow-y-auto max-h-[85vh] animate-in fade-in slide-in-from-top-4 duration-300">
           {navLinks.map((link) => (
-            link.href && link.href !== '#' ? (
-              <Link key={link.label} to={link.href} className="block w-full text-left text-zinc-300 py-2" onClick={() => setOpenMobile(false)}>
-                {link.label}
-              </Link>
-            ) : (
-              <button key={link.label} type="button" className="block w-full text-left text-zinc-300 py-2">
-                {link.label}
-              </button>
-            )
+            <div key={link.label} className="space-y-1">
+              {link.href && link.href !== '#' ? (
+                <Link to={link.href} className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
+                  {link.label}
+                </Link>
+              ) : (
+                <div className="text-zinc-500 font-medium text-xs uppercase tracking-wider pt-2 pb-1">
+                  {link.label}
+                </div>
+              )}
+              {link.hasDropdown && (
+                <div className="pl-4 border-l border-white/10 space-y-2">
+                  {link.items.map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => handleItemClick(item)}
+                      className="block w-full text-left text-zinc-400 hover:text-white py-1.5 text-sm"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
-          <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
             <div className="flex gap-3">
               <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2">Pricing</Link>
               <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2 border border-red-500/30 text-red-400 hover:bg-red-500/10">Donate</a>

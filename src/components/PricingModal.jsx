@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Check, ArrowRight, Sparkles, Globe } from 'lucide-react';
+import { X, Check, ArrowRight, Sparkles } from 'lucide-react';
 import { pricingData } from '../mock/mock';
 import { useUI } from '../context/UIContext';
 import { useCurrency } from '../hooks/useCurrency';

@@ -28,6 +28,13 @@ import LandingPageDev from './pages/services/landingpagedevelopment';
 import EcommerceDev from './pages/services/ecommercedevelopment';
 import LmsDev from './pages/services/lmsdevelopment';
 import WebAppDev from './pages/services/webappdevelopment';
+import WebsiteDesign from './pages/services/websitedesign';
+import AIAutomation from './pages/services/aiautomation';
+import WebsiteDevMumbai from './pages/services/websitedevmumbai';
+import Portfolio from './pages/Portfolio';
+import CaseStudies from './pages/CaseStudies';
+import FlyWithRanjita from './pages/cases/flywithranjita';
+import Blog from './pages/Blog';
 import WebCostArticle from './pages/articles/websitecostindia';
 import WebVsLandingArticle from './pages/articles/websitevslandingpage';
 import SeoFriendlyWebsite from './pages/articles/seofriendlywebsite';
@@ -87,10 +94,21 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Home />} />
             <Route path="/website-development" element={<WebsiteDev />} />
+            <Route path="/website-design" element={<WebsiteDesign />} />
             <Route path="/landing-page-development" element={<LandingPageDev />} />
             <Route path="/ecommerce-development" element={<EcommerceDev />} />
             <Route path="/web-application-development" element={<WebAppDev />} />
+            <Route path="/ai-automation" element={<AIAutomation />} />
             <Route path="/lms-development" element={<LmsDev />} />
+
+            <Route path="/website-development-mumbai" element={<WebsiteDevMumbai />} />
+
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/fly-with-ranjita" element={<FlyWithRanjita />} />
+            
+            <Route path="/blog" element={<Blog />} />
+
             <Route path="/website-cost-india" element={<WebCostArticle />} />
             <Route path="/website-vs-landing-page" element={<WebVsLandingArticle />} />
             <Route path="/seo-friendly-website" element={<SeoFriendlyWebsite />} />

@@ -17,12 +17,16 @@ const Footer = () => {
                 {links.map((link) => {
                   let href = '#';
                   if (link === 'Websites') href = '/website-development';
+                  if (link === 'Web Design') href = '/website-design';
                   if (link === 'Web Apps') href = '/web-application-development';
                   if (link === 'Landing Pages') href = '/landing-page-development';
                   if (link === 'E-Commerce') href = '/ecommerce-development';
+                  if (link === 'AI Automation') href = '/ai-automation';
+                  if (link === 'Blog') href = '/blog';
                   if (link === 'Website Cost India') href = '/website-cost-india';
                   if (link === 'Website vs Landing Page') href = '/website-vs-landing-page';
                   if (link === 'SEO Guidelines') href = '/seo-friendly-website';
+                  if (link === 'Mumbai Web Dev') href = '/website-development-mumbai';
                   if (link === 'About') href = '/about';
                   if (link === 'FAQ') href = '/faq';
                   if (link === 'Privacy Policy') href = '/privacy';

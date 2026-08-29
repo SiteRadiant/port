@@ -4,14 +4,18 @@ export const BRAND = 'SiteRadiant';
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
     { label: 'Website Development', href: '/website-development' },
+    { label: 'Website Design', href: '/website-design' },
     { label: 'Web Application Development', href: '/web-application-development' },
     { label: 'Landing Page Development', href: '/landing-page-development' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', href: '/ecommerce-development' },
     { label: 'Learning Management System', href: '/lms-development' },
+    { label: 'AI Automation', href: '/ai-automation' },
   ]},
+  { label: 'Portfolio', href: '/portfolio', hasDropdown: false },
   { label: 'Resources', href: '#', hasDropdown: true, items: [
+    { label: 'Blog', href: '/blog' },
     { label: 'Website Cost in India', href: '/website-cost-india' },
     { label: 'Website vs Landing Page', href: '/website-vs-landing-page' },
     { label: 'SEO Friendly Website', href: '/seo-friendly-website' },
@@ -58,8 +62,8 @@ export const testimonials = [
 ];
 
 export const footerLinks = {
-  Services: ['Websites', 'Web Apps', 'Landing Pages', 'E-Commerce'],
-  Resources: ['Website Cost India', 'Website vs Landing Page', 'SEO Guidelines'],
+  Services: ['Websites', 'Web Design', 'Web Apps', 'Landing Pages', 'E-Commerce', 'AI Automation'],
+  Resources: ['Blog', 'Website Cost India', 'Website vs Landing Page', 'SEO Guidelines', 'Mumbai Web Dev'],
   Company: ['About', 'FAQ', 'Contact', 'Privacy Policy', 'Terms'],
 };
 
