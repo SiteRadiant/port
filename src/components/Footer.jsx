@@ -31,11 +31,14 @@ const Footer = () => {
                   if (link === 'FAQ') href = '/faq';
                   if (link === 'Privacy Policy') href = '/privacy';
                   if (link === 'Terms') href = '/terms-and-conditions';
+                  if (link === 'Our Product') href = 'https://flow.siteradiant.co.in';
                   
                   return (
                     <li key={link}>
                       {link === 'Contact' ? (
                         <button onClick={() => openContact()} className="text-[14.5px] text-zinc-400 hover:text-white transition-colors duration-200">{link}</button>
+                      ) : href.startsWith('http') ? (
+                        <a href={href} target="_blank" rel="noreferrer" className="text-[14.5px] text-zinc-400 hover:text-white transition-colors duration-200">{link}</a>
                       ) : (
                         <Link to={href} className="text-[14.5px] text-zinc-400 hover:text-white transition-colors duration-200">{link}</Link>
                       )}

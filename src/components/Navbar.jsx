@@ -51,10 +51,16 @@ const Navbar = () => {
               onMouseLeave={() => setHovered(null)}
             >
               {link.href && link.href !== '#' ? (
-                <Link to={link.href} className="nav-link py-2">
-                  {link.label}
-                  {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
-                </Link>
+                link.href.startsWith('http') ? (
+                  <a href={link.href} target="_blank" rel="noreferrer" className="nav-link py-2">
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link to={link.href} className="nav-link py-2">
+                    {link.label}
+                    {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
+                  </Link>
+                )
               ) : (
                 <button type="button" className="nav-link py-2">
                   {link.label}
@@ -100,9 +106,15 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <div key={link.label} className="space-y-1">
               {link.href && link.href !== '#' ? (
-                <Link to={link.href} className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
-                  {link.label}
-                </Link>
+                link.href.startsWith('http') ? (
+                  <a href={link.href} target="_blank" rel="noreferrer" className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link to={link.href} className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
+                    {link.label}
+                  </Link>
+                )
               ) : (
                 <div className="text-zinc-500 font-medium text-xs uppercase tracking-wider pt-2 pb-1">
                   {link.label}

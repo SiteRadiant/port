@@ -13,6 +13,7 @@ export const navLinks = [
     { label: 'Learning Management System', href: '/lms-development' },
     { label: 'AI Automation', href: '/ai-automation' },
   ]},
+  { label: 'Our Product', href: 'https://flow.siteradiant.co.in', hasDropdown: false },
   { label: 'Portfolio', href: '/portfolio', hasDropdown: false },
   { label: 'Resources', href: '#', hasDropdown: true, items: [
     { label: 'Blog', href: '/blog' },
@@ -64,7 +65,7 @@ export const testimonials = [
 export const footerLinks = {
   Services: ['Websites', 'Web Design', 'Web Apps', 'Landing Pages', 'E-Commerce', 'AI Automation'],
   Resources: ['Blog', 'Website Cost India', 'Website vs Landing Page', 'SEO Guidelines', 'Mumbai Web Dev'],
-  Company: ['About', 'FAQ', 'Contact', 'Privacy Policy', 'Terms'],
+  Company: ['Our Product', 'About', 'FAQ', 'Contact', 'Privacy Policy', 'Terms'],
 };
 
 // Pricing data (INR)
