@@ -3,13 +3,14 @@ export const BRAND = 'SiteRadiant';
 
 export const navLinks = [
   { label: 'Services', href: '/services', hasDropdown: true, items: [
-    { label: 'Website Development', href: '/website-development' },
-    { label: 'Website Design', href: '/website-design' },
+    { label: 'Custom Website Development', href: '/custom-website-development' },
+    { label: 'Website Redesign', href: '/website-redesign' },
     { label: 'Web Application Development', href: '/web-application-development' },
-    { label: 'Landing Page Development', href: '/landing-page-development' },
+    { label: 'Conversion Web Design', href: '/conversion-focused-web-design' },
   ]},
   { label: 'Solutions', href: '/services', hasDropdown: true, items: [
     { label: 'E-Commerce', href: '/ecommerce-development' },
+      { label: 'Shopify Alternatives', href: '/shopify-alternatives' },
     { label: 'Learning Management System', href: '/lms-development' },
     { label: 'AI Automation', href: '/ai-automation' },
   ]},
@@ -17,9 +18,9 @@ export const navLinks = [
   { label: 'Portfolio', href: '/portfolio', hasDropdown: false },
   { label: 'Resources', href: '#', hasDropdown: true, items: [
     { label: 'Blog', href: '/blog' },
-    { label: 'Website Cost in India', href: '/website-cost-india' },
-    { label: 'Website vs Landing Page', href: '/website-vs-landing-page' },
-    { label: 'SEO Friendly Website', href: '/seo-friendly-website' },
+    { label: 'Cost of Custom Website', href: '/how-much-does-a-custom-website-cost' },
+    { label: 'Custom vs Shopify', href: '/custom-website-vs-shopify' },
+    { label: 'Why Websites Fail', href: '/why-websites-fail-to-convert' },
   ]},
   { label: 'About', href: '/about', hasDropdown: false },
   { label: 'FAQ', href: '/faq', hasDropdown: false },
@@ -63,8 +64,8 @@ export const testimonials = [
 ];
 
 export const footerLinks = {
-  Services: ['Websites', 'Web Design', 'Web Apps', 'Landing Pages', 'E-Commerce', 'AI Automation'],
-  Resources: ['Blog', 'Website Cost India', 'Website vs Landing Page', 'SEO Guidelines', 'Mumbai Web Dev'],
+  Services: ['Custom Websites', 'Website Redesign', 'Shopify Alternatives', 'Landing Pages', 'E-Commerce', 'AI Automation'],
+  Resources: ['Blog', 'Custom Website Cost', 'When to Redesign', 'Why Websites Fail', 'Mumbai Web Dev'],
   Company: ['Our Product', 'About', 'FAQ', 'Contact', 'Privacy Policy', 'Terms'],
 };
 

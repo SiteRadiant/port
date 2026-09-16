@@ -39,13 +39,13 @@ const Hero = () => {
         </div>
 
         <h1 className="text-[44px] sm:text-[58px] lg:text-[76px] font-extrabold leading-[1.05] tracking-tight">
-          Website Development
+          Custom Websites Built to Turn
           <br />
-          <span className="gradient-text">Company in India</span>
+          <span className="gradient-text">Visitors Into Customers</span>
         </h1>
 
         <p className="mt-6 max-w-[680px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
-          We design and develop fast, SEO-friendly websites, custom e-commerce stores, custom software applications, and AI-powered automation solutions that grow business revenues.
+          We build high-performance, conversion-focused websites and robust e-commerce platforms for startups, brands, and scaling businesses seeking measurable growth.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">

@@ -23,6 +23,15 @@ import FAQ from './pages/FAQ';
 import NotFound from './pages/NotFound';
 import Toaster from "./components/ui/toaster";
 import { UIProvider } from './context/UIContext';
+import CustomWebsiteDev from './pages/services/customwebsitedevelopment';
+import WebsiteRedesign from './pages/services/websiteredesign';
+import ConversionWebDesign from './pages/services/conversionfocusedwebdesign';
+import ShopifyAlternatives from './pages/services/shopifyalternatives';
+import CustomCostArticle from './pages/articles/howmuchdoesacustomwebsitecost';
+import CustomVsShopifyArticle from './pages/articles/customwebsitevsshopify';
+import RedesignArticle from './pages/articles/whentoredesignyourwebsite';
+import WhyFailsArticle from './pages/articles/whywebsitesfailtoconvert';
+
 import WebsiteDev from './pages/services/websitedevelopment';
 import LandingPageDev from './pages/services/landingpagedevelopment';
 import EcommerceDev from './pages/services/ecommercedevelopment';
@@ -44,8 +53,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white overflow-x-hidden">
       <SEO
-        title="Website Development & E-commerce Solutions"
-        description="SiteRadiant is a premier agency building SEO-ready websites, robust e-commerce platforms, and custom software for scaling businesses."
+        title="Custom Website Development Agency"
+        description="SiteRadiant builds high-performance, conversion-focused websites and robust e-commerce platforms for startups, brands, and scaling businesses."
         path="/"
         schema={[
           {
@@ -93,6 +102,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Home />} />
+            <Route path="/custom-website-development" element={<CustomWebsiteDev />} />
+            <Route path="/website-redesign" element={<WebsiteRedesign />} />
+            <Route path="/conversion-focused-web-design" element={<ConversionWebDesign />} />
+            <Route path="/shopify-alternatives" element={<ShopifyAlternatives />} />
+            
+            <Route path="/how-much-does-a-custom-website-cost" element={<CustomCostArticle />} />
+            <Route path="/custom-website-vs-shopify" element={<CustomVsShopifyArticle />} />
+            <Route path="/when-to-redesign-your-website" element={<RedesignArticle />} />
+            <Route path="/why-websites-fail-to-convert" element={<WhyFailsArticle />} />
+
             <Route path="/website-development" element={<WebsiteDev />} />
             <Route path="/website-design" element={<WebsiteDesign />} />
             <Route path="/landing-page-development" element={<LandingPageDev />} />

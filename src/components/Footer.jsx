@@ -16,16 +16,16 @@ const Footer = () => {
               <ul className="space-y-3.5">
                 {links.map((link) => {
                   let href = '#';
-                  if (link === 'Websites') href = '/website-development';
-                  if (link === 'Web Design') href = '/website-design';
-                  if (link === 'Web Apps') href = '/web-application-development';
+                  if (link === 'Custom Websites') href = '/custom-website-development';
+                  if (link === 'Website Redesign') href = '/website-redesign';
+                  if (link === 'Shopify Alternatives') href = '/shopify-alternatives';
                   if (link === 'Landing Pages') href = '/landing-page-development';
                   if (link === 'E-Commerce') href = '/ecommerce-development';
                   if (link === 'AI Automation') href = '/ai-automation';
                   if (link === 'Blog') href = '/blog';
-                  if (link === 'Website Cost India') href = '/website-cost-india';
-                  if (link === 'Website vs Landing Page') href = '/website-vs-landing-page';
-                  if (link === 'SEO Guidelines') href = '/seo-friendly-website';
+                  if (link === 'Custom Website Cost') href = '/how-much-does-a-custom-website-cost';
+                  if (link === 'When to Redesign') href = '/when-to-redesign-your-website';
+                  if (link === 'Why Websites Fail') href = '/why-websites-fail-to-convert';
                   if (link === 'Mumbai Web Dev') href = '/website-development-mumbai';
                   if (link === 'About') href = '/about';
                   if (link === 'FAQ') href = '/faq';
