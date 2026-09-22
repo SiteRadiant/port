@@ -108,9 +108,9 @@ export const pricingData = {
     subtitle: 'Scalable e-learning platforms to host courses, manage students, and monetize your knowledge.',
     tagline: 'Teach the World',
     plans: [
-      { name: 'Starter', price: 19999, original: 29999, popular: false, desc: 'Basic course hosting', features: ['Custom LMS setup', 'Up to 5 courses', 'Student dashboard', 'Razorpay integration', 'Basic progress tracking', '30 days support'] },
-      { name: 'Growth', price: 34999, original: 49999, popular: true, desc: 'Advanced e-learning portal', features: ['Everything in Starter', 'Unlimited courses', 'Drip content scheduling', 'Quizzes & assignments', 'Certificates of completion', 'Zoom/Webinar integration', '90 days support'] },
-      { name: 'Enterprise', price: 89999, original: 129999, popular: false, desc: 'Full-scale university platform', features: ['Everything in Growth', 'Multi-instructor marketplace', 'Custom video DRM protection', 'Subscription & membership tiers', 'SCORM compliance', 'Mobile apps (iOS + Android)', '12 months support'] },
+      { name: 'Starter', price: 24999, original: 34999, popular: false, desc: 'Basic course hosting', features: ['Custom LMS setup', 'Up to 5 courses', 'Student dashboard', 'Razorpay integration', 'Basic progress tracking', '30 days support'] },
+      { name: 'Growth', price: 39999, original: 54999, popular: true, desc: 'Advanced e-learning portal', features: ['Everything in Starter', 'Unlimited courses', 'Drip content scheduling', 'Quizzes & assignments', 'Certificates of completion', 'Zoom/Webinar integration', '90 days support'] },
+      { name: 'Enterprise', price: 99999, original: 149999, popular: false, desc: 'Full-scale university platform', features: ['Everything in Growth', 'Multi-instructor marketplace', 'Custom video DRM protection', 'Subscription & membership tiers', 'SCORM compliance', 'Mobile apps (iOS + Android)', '12 months support'] },
     ],
   },
   'startups': {
