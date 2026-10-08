@@ -2,12 +2,12 @@
   "openapi": "3.0.0",
   "info": {
     "title": "SiteRadiant Public API",
-    "description": "Public API for SiteRadiant services. SiteRadiant offers custom website development, website redesign, and e-commerce solutions. This API allows agents to query our service offerings and retrieve pricing information.",
+    "description": "Public API for SiteRadiant services. SiteRadiant offers custom website development.",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://siteradiant.co.in/api"
+      "url": "https://siteradiant.co.in/api/v1"
     }
   ],
   "paths": {
@@ -24,25 +24,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": { "type": "string" },
-                      "name": { "type": "string" }
-                    }
+                    "$ref": "#/components/schemas/Service"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
+            "description": "Bad request"
           }
         }
       }
@@ -50,12 +39,12 @@
   },
   "components": {
     "schemas": {
-      "Error": {
+      "Service": {
         "type": "object",
+        "required": ["id", "name"],
         "properties": {
-          "code": { "type": "string" },
-          "message": { "type": "string" },
-          "resolution": { "type": "string" }
+          "id": { "type": "string" },
+          "name": { "type": "string" }
         }
       }
     }
