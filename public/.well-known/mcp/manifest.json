@@ -1,0 +1,7 @@
+{
+  "name": "SiteRadiant MCP Server",
+  "version": "1.0.0",
+  "description": "SiteRadiant Model Context Protocol server exposing API tools.",
+  "transport": "sse",
+  "tools": []
+}
