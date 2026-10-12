@@ -106,15 +106,22 @@ const Hero = () => {
           })}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <div className="mt-10 flex flex-col sm:flex-row gap-3.5 justify-center items-center">
           <button onClick={() => openContact()} className="btn-primary hero-cta-btn">
-            <span>Book a Consultation</span>
+            <span>Get a Project Quote</span>
             <span className="hero-cta-arrow">
               <ArrowRight size={15} />
             </span>
           </button>
-          <button onClick={() => navigate('/services')} className="btn-ghost">
-            Explore Services
+          <button 
+            onClick={() => {
+              const el = document.getElementById('featured-work');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              else navigate('/portfolio');
+            }} 
+            className="btn-ghost"
+          >
+            See Our Work
           </button>
         </div>
       </motion.div>

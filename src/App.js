@@ -102,11 +102,11 @@ const Home = () => {
       <main id="main-content">
         <Hero />
         <LogoCarousel />
-        <Services />
-        <Stats />
-        <Industries />
-        <Process />
         <FeaturedWork />
+        <Stats />
+        <Services />
+        <Process />
+        <Industries />
         <CTA />
       </main>
       <Footer />
