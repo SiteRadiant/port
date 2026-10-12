@@ -28,9 +28,25 @@ const Counter = ({ to, suffix = '', duration = 1200, play = true }) => {
     return () => cancelAnimationFrame(rafRef.current);
   }, [to, duration, play]);
 
+  const cleanSuffix = suffix.trim();
+  const isWord = cleanSuffix.length > 1;
+
   return (
-    <div className="text-center">
-      <div className="text-[72px] sm:text-[96px] font-extrabold leading-none text-white">{fmt(value)}{suffix}</div>
+    <div className="flex items-baseline justify-center whitespace-nowrap min-h-[76px] sm:min-h-[96px]">
+      <span className="text-[52px] sm:text-[68px] lg:text-[76px] font-extrabold leading-none text-white tracking-tight">
+        {fmt(value)}
+      </span>
+      {cleanSuffix && (
+        <span
+          className={
+            isWord
+              ? "text-xl sm:text-2xl font-bold text-red-400 ml-1.5 uppercase tracking-wider"
+              : "text-[32px] sm:text-[44px] font-bold text-red-400 ml-0.5"
+          }
+        >
+          {cleanSuffix}
+        </span>
+      )}
     </div>
   );
 };
