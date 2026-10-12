@@ -1,5 +1,5 @@
 import React from 'react';
-import {Calendar, Code2, Heart, Lightbulb, Mail, Phone, Rocket, ShieldCheck, Users } from 'lucide-react';
+import {Calendar, Code2, Heart, Lightbulb, Mail, Phone, Rocket, ShieldCheck } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
