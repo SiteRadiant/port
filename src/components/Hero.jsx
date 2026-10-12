@@ -38,76 +38,76 @@ const Hero = () => {
           Website Designing & Development Services for Businesses of All Sizes
         </div>
 
-        <h1 className="text-[44px] sm:text-[58px] lg:text-[76px] font-extrabold leading-[1.05] tracking-tight">
+        <h1 className="text-[34px] sm:text-[54px] lg:text-[76px] font-extrabold leading-[1.08] sm:leading-[1.05] tracking-tight">
           Custom Websites Built to Turn
           <br />
           <span className="gradient-text">Visitors Into Customers</span>
         </h1>
 
-        <p className="mt-6 max-w-[680px] mx-auto text-[16px] sm:text-[17px] text-zinc-400 leading-relaxed">
+        <p className="mt-4 sm:mt-6 max-w-[680px] mx-auto text-[15px] sm:text-[17px] text-zinc-400 leading-relaxed px-2">
           We build high-performance, conversion-focused websites and robust e-commerce platforms for startups, brands, and scaling businesses seeking measurable growth.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">
+        <div className="mt-8 sm:mt-10 grid grid-cols-2 lg:flex lg:flex-wrap gap-2.5 sm:gap-4 justify-center items-stretch max-w-2xl mx-auto">
           <div className="price-card" onClick={() => openPricing('website')}>
-            <div className="w-10 h-10 rounded-lg bg-red-500/15 border border-red-500/25 flex items-center justify-center">
-              <Globe size={18} className="text-red-300" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-red-500/15 border border-red-500/25 flex items-center justify-center shrink-0">
+              <Globe size={16} className="text-red-300 sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div className="text-left">
-              <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('website'))}</div>
-              <div className="text-[11px] text-zinc-500">starting price</div>
+            <div className="text-left min-w-0">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">Website</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('website'))}</div>
+              <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>
           
           <div className="price-card" onClick={() => openPricing('landing_page')}>
-            <div className="w-10 h-10 rounded-lg bg-orange-500/15 border border-orange-500/25 flex items-center justify-center">
-              <LayoutTemplate size={18} className="text-orange-300" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-orange-500/15 border border-orange-500/25 flex items-center justify-center shrink-0">
+              <LayoutTemplate size={16} className="text-orange-300 sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div className="text-left">
-              <div className="text-[11px] uppercase tracking-wider text-zinc-500">Landing Page</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('landing_page'))}</div>
-              <div className="text-[11px] text-zinc-500">starting price</div>
+            <div className="text-left min-w-0">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">Landing Page</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('landing_page'))}</div>
+              <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>  
           
           <div className="price-card flex" onClick={() => openPricing('ecommerce')}>
-            <div className="w-10 h-10 rounded-lg bg-green-500/15 border border-green-500/25 flex items-center justify-center">
-              <Store size={18} className="text-green-300" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-green-500/15 border border-green-500/25 flex items-center justify-center shrink-0">
+              <Store size={16} className="text-green-300 sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div className="text-left">
-              <div className="text-[11px] uppercase tracking-wider text-zinc-500">E-Commerce</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('ecommerce'))}</div>
-              <div className="text-[11px] text-zinc-500">starting price</div>
+            <div className="text-left min-w-0">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">E-Commerce</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('ecommerce'))}</div>
+              <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>
 
           <div className="price-card flex" onClick={() => openPricing('lms')}>
-            <div className="w-10 h-10 rounded-lg bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center">
-              <GraduationCap size={18} className="text-indigo-300" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center shrink-0">
+              <GraduationCap size={16} className="text-indigo-300 sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div className="text-left">
-              <div className="text-[11px] uppercase tracking-wider text-zinc-500">LMS System</div>
-              <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('lms'))}</div>
-              <div className="text-[11px] text-zinc-500">starting price</div>
+            <div className="text-left min-w-0">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">LMS System</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('lms'))}</div>
+              <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
+        <div className="mt-6 sm:mt-8 flex flex-wrap gap-2 sm:gap-3 justify-center px-1">
           {heroPills.map((p, i) => {
             const Icon = p.icon;
             return (
               <div key={i} className="pill hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-0.5 cursor-default">
-                <Icon size={14} className={p.color} />
-                {p.label}
+                <Icon size={13} className={p.color} />
+                <span className="truncate">{p.label}</span>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-3.5 justify-center items-center">
-          <button onClick={() => openContact()} className="btn-primary hero-cta-btn">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center w-full max-w-xs sm:max-w-none mx-auto">
+          <button onClick={() => openContact()} className="btn-primary hero-cta-btn justify-center w-full sm:w-auto">
             <span>Get a Project Quote</span>
             <span className="hero-cta-arrow">
               <ArrowRight size={15} />
@@ -119,7 +119,7 @@ const Hero = () => {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
               else navigate('/portfolio');
             }} 
-            className="btn-ghost"
+            className="btn-ghost justify-center w-full sm:w-auto"
           >
             See Our Work
           </button>

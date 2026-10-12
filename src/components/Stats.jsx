@@ -32,16 +32,16 @@ const Counter = ({ to, suffix = '', duration = 1200, play = true }) => {
   const isWord = cleanSuffix.length > 1;
 
   return (
-    <div className="flex items-baseline justify-center whitespace-nowrap min-h-[76px] sm:min-h-[96px]">
-      <span className="text-[52px] sm:text-[68px] lg:text-[76px] font-extrabold leading-none text-white tracking-tight">
+    <div className="flex items-baseline justify-center whitespace-nowrap min-h-[48px] sm:min-h-[76px]">
+      <span className="text-[36px] sm:text-[60px] lg:text-[76px] font-extrabold leading-none text-white tracking-tight">
         {fmt(value)}
       </span>
       {cleanSuffix && (
         <span
           className={
             isWord
-              ? "text-xl sm:text-2xl font-bold text-red-400 ml-1.5 uppercase tracking-wider"
-              : "text-[32px] sm:text-[44px] font-bold text-red-400 ml-0.5"
+              ? "text-base sm:text-2xl font-bold text-red-400 ml-1 uppercase tracking-wider"
+              : "text-[26px] sm:text-[44px] font-bold text-red-400 ml-0.5"
           }
         >
           {cleanSuffix}
@@ -79,18 +79,18 @@ export default function Stats({ imageSrc = '/images/stats-placeholder.svg' }) {
   }, []);
 
   return (
-    <section className="py-20" ref={nodeRef}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-12 sm:py-20" ref={nodeRef}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-2xl">
           {/* Decorative background image (replace file in public/images to customize) */}
           <img src={imageSrc} alt="stats background" className="absolute inset-0 w-full h-full object-cover opacity-20 -z-10" />
 
-          <div className="bg-[#070707]/80 backdrop-blur-sm border border-white/5 py-20 px-6 sm:px-12 rounded-2xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
+          <div className="bg-[#070707]/80 backdrop-blur-sm border border-white/5 py-10 sm:py-20 px-4 sm:px-12 rounded-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 items-center text-center">
               {stats.map((s) => (
                 <div key={s.label}>
                   <Counter to={s.value} suffix={s.suffix} duration={1400} play={play} />
-                  <div className="mt-3 text-zinc-400 text-[15px]">{s.label}</div>
+                  <div className="mt-2 text-zinc-400 text-xs sm:text-[15px] leading-tight">{s.label}</div>
                 </div>
               ))}
             </div>

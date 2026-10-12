@@ -103,18 +103,23 @@
   .svc-card:hover { border-color: rgba(239, 68, 68, 0.4); background: linear-gradient(180deg, rgba(239,68,68,0.06) 0%, rgba(220,38,38,0.02) 100%); transform: translateY(-2px); }
   .icon-tile { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; }
   .eyebrow { color: #f87171; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
-  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); font-size: 13px; color: #d4d4d8; }
-  .btn-primary { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px -6px rgba(220, 38, 38, 0.5); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); font-size: 12px; color: #d4d4d8; }
+  @media (min-width: 640px) { .pill { gap: 8px; padding: 8px 16px; font-size: 13px; } }
+  .btn-primary { background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%); color: #ffffff; padding: 12px 22px; min-height: 44px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px -6px rgba(220, 38, 38, 0.5); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
   .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 10px 24px -6px rgba(220, 38, 38, 0.65); }
   .hero-cta-btn { border: 1px solid rgba(248, 113, 113, 0.7); gap: 12px; padding-right: 10px; }
   .hero-cta-arrow { width: 28px; height: 28px; border-radius: 9999px; background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center; justify-content: center; }
-  .btn-white { background: #ffffff; color: #0a0a0b; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s ease, transform 0.2s ease; }
+  .btn-white { background: #ffffff; color: #0a0a0b; padding: 12px 22px; min-height: 44px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s ease, transform 0.2s ease; }
   .btn-white:hover { background: #ededed; transform: translateY(-1px); }
-  .btn-ghost { background: transparent; color: #ffffff; padding: 12px 22px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12); transition: background 0.2s ease, border-color 0.2s ease; }
+  .btn-ghost { background: transparent; color: #ffffff; padding: 12px 22px; min-height: 44px; border-radius: 9999px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12); transition: background 0.2s ease, border-color 0.2s ease; }
   .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(239, 68, 68, 0.4); }
-  .price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; min-width: 240px; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  .price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  @media (min-width: 640px) {
+    .price-card { padding: 14px 18px; gap: 14px; min-width: 220px; }
+  }
   .price-card:hover { border-color: rgba(239, 68, 68, 0.45); background: rgba(239, 68, 68, 0.05); transform: translateY(-2px); }
-  .logo-chip { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); white-space: nowrap; color: #d4d4d8; font-weight: 500; font-size: 15px; }
+  .logo-chip { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); white-space: nowrap; color: #d4d4d8; font-weight: 500; font-size: 13.5px; }
+  @media (min-width: 640px) { .logo-chip { padding: 10px 18px; font-size: 15px; } }
   .logo-dot { width: 28px; height: 28px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
   .industry-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 24px; transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease; }
   .industry-card:hover { border-color: rgba(239,68,68,0.4); transform: translateY(-3px); background: rgba(239,68,68,0.04); }
