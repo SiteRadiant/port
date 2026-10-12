@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 // App.css import removed; styles are inlined in public/index.html for development.
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from './components/Navbar';
@@ -8,7 +8,6 @@ import Hero from './components/Hero';
 import LogoCarousel from './components/LogoCarousel';
 import Services from './components/Services';
 import Stats from './components/Stats';
-import Industries from './components/Industries';
 import Process from './components/Process';
 import FeaturedWork from './components/FeaturedWork';
 import CTA from './components/CTA';
@@ -106,7 +105,6 @@ const Home = () => {
         <Stats />
         <Services />
         <Process />
-        <Industries />
         <CTA />
       </main>
       <Footer />
@@ -114,10 +112,28 @@ const Home = () => {
   );
 };
 
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname, hash]);
+
+  return null;
+};
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
         <UIProvider>
           <Routes>
             <Route path="/" element={<Home />} />

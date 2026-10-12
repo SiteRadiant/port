@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,6 +7,10 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Portfolio() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
   const projects = [
     {
       title: 'Fly With Ranjita',

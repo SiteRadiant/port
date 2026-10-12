@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SEO from '../../components/SEO';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import CTA from '../../components/CTA';
 
 export default function FlyWithRanjita() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
   return (
     <div className="min-h-screen bg-[#0a0a0b] text-white">
       <SEO 
