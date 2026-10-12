@@ -81,20 +81,20 @@ const ContactDialog = ({ onClose, prefill }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-start justify-center p-4 sm:p-8 overflow-y-auto" onClick={onClose}>
+    <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onClick={onClose}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div
-        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[640px] w-full my-8 transition-all duration-300"
+        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[640px] w-full max-h-[92vh] overflow-y-auto my-auto transition-all duration-300"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition z-10">
+        <button onClick={onClose} className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition z-10">
           <X size={16} />
         </button>
 
         {!submitted ? (
-          <div className="p-7 sm:p-9">
-            <h2 className="text-[26px] font-extrabold text-white tracking-tight">Tell us about your project</h2>
-            <div className="flex items-center gap-2 mt-4 mb-8">
+          <div className="p-5 sm:p-9">
+            <h2 className="text-[22px] sm:text-[26px] font-extrabold text-white tracking-tight">Tell us about your project</h2>
+            <div className="flex items-center gap-2 mt-3 sm:mt-4 mb-6 sm:mb-8">
               <div className={`h-1.5 flex-1 rounded-full transition-colors duration-500 ${step >= 1 ? 'bg-red-500' : 'bg-white/10'}`}></div>
               <div className={`h-1.5 flex-1 rounded-full transition-colors duration-500 ${step >= 2 ? 'bg-red-500' : 'bg-white/10'}`}></div>
             </div>
@@ -103,18 +103,18 @@ const ContactDialog = ({ onClose, prefill }) => {
               
               {/* STEP 1: Project Details */}
               {step === 1 && (
-                <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div className="space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                   <div>
-                    <label className="text-[13px] font-semibold text-zinc-300 mb-3 block">What service are you looking for?</label>
-                    <div className="flex flex-wrap gap-2">
+                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">What service are you looking for?</label>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {services.map((s) => (
                         <button
                           key={s}
                           type="button"
                           onClick={() => handleChange('service', s)}
-                          className={`px-4 py-2.5 rounded-full text-[13px] font-medium border transition-all duration-300 ${
+                          className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-[12px] sm:text-[13px] font-medium border transition-all duration-300 ${
                             form.service === s 
-                              ? 'bg-red-500/10 border-red-500/50 text-red-400 scale-105' 
+                              ? 'bg-red-500/15 border-red-500/60 text-red-300 scale-[1.02]' 
                               : 'bg-[#151518] border-white/5 text-zinc-400 hover:border-white/20 hover:text-zinc-200'
                           }`}
                         >
@@ -126,16 +126,16 @@ const ContactDialog = ({ onClose, prefill }) => {
                   </div>
 
                   <div>
-                    <label className="text-[13px] font-semibold text-zinc-300 mb-3 block">Estimated Budget (INR)</label>
-                    <div className="flex flex-wrap gap-2">
+                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">Estimated Budget (INR)</label>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {budgets.map((b) => (
                         <button
                           key={b}
                           type="button"
                           onClick={() => handleChange('budget', b)}
-                          className={`px-4 py-2.5 rounded-full text-[13px] font-medium border transition-all duration-300 ${
+                          className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-[12px] sm:text-[13px] font-medium border transition-all duration-300 ${
                             form.budget === b 
-                              ? 'bg-red-500/10 border-red-500/50 text-red-400 scale-105' 
+                              ? 'bg-red-500/15 border-red-500/60 text-red-300 scale-[1.02]' 
                               : 'bg-[#151518] border-white/5 text-zinc-400 hover:border-white/20 hover:text-zinc-200'
                           }`}
                         >
@@ -146,11 +146,11 @@ const ContactDialog = ({ onClose, prefill }) => {
                   </div>
 
                   <div>
-                    <label className="text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><MessageSquare size={14}/> Project Details (Optional)</label>
-                    <textarea rows={4} className="input-field resize-none text-[14px]" placeholder="Tell us about your goals, timeline, and what you want to build..." value={form.message} onChange={(e) => handleChange('message', e.target.value)} />
+                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><MessageSquare size={14}/> Project Details (Optional)</label>
+                    <textarea rows={3} className="input-field resize-none text-[16px] sm:text-[14px]" placeholder="Tell us about your goals, timeline, and what you want to build..." value={form.message} onChange={(e) => handleChange('message', e.target.value)} />
                   </div>
 
-                  <button type="button" onClick={nextStep} className="btn-primary w-full justify-center mt-2">
+                  <button type="button" onClick={nextStep} className="btn-primary w-full justify-center mt-2 min-h-[46px]">
                     Next Step <ArrowRight size={15} />
                   </button>
                 </div>
@@ -158,35 +158,35 @@ const ContactDialog = ({ onClose, prefill }) => {
 
               {/* STEP 2: Contact Details */}
               {step === 2 && (
-                <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
-                  <button type="button" onClick={() => setStep(1)} className="text-zinc-400 text-[13px] flex items-center gap-1 hover:text-white transition-colors mb-2 -ml-1 p-1">
+                <div className="space-y-5 sm:space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
+                  <button type="button" onClick={() => setStep(1)} className="text-zinc-400 text-[12px] sm:text-[13px] flex items-center gap-1 hover:text-white transition-colors mb-1 -ml-1 p-1">
                     <ArrowLeft size={14} /> Back to project details
                   </button>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><User size={14}/> Full Name</label>
-                      <input autoFocus className={`input-field text-[14px] ${errors.name ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="Jane Doe" value={form.name} onChange={(e) => handleChange('name', e.target.value)} />
+                      <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-1.5"><User size={14}/> Full Name</label>
+                      <input autoFocus className={`input-field text-[16px] sm:text-[14px] ${errors.name ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="Jane Doe" value={form.name} onChange={(e) => handleChange('name', e.target.value)} />
                       {errors.name && <p className="text-red-400 text-[12px] mt-1">{errors.name}</p>}
                     </div>
                     <div>
-                      <label className="text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><Building size={14}/> Company (Optional)</label>
-                      <input className="input-field text-[14px]" placeholder="Acme Inc." value={form.company} onChange={(e) => handleChange('company', e.target.value)} />
+                      <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-1.5"><Building size={14}/> Company (Optional)</label>
+                      <input className="input-field text-[16px] sm:text-[14px]" placeholder="Acme Inc." value={form.company} onChange={(e) => handleChange('company', e.target.value)} />
                     </div>
                     <div>
-                      <label className="text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><Mail size={14}/> Email</label>
-                      <input className={`input-field text-[14px] ${errors.email ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="you@company.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} />
+                      <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-1.5"><Mail size={14}/> Email</label>
+                      <input type="email" className={`input-field text-[16px] sm:text-[14px] ${errors.email ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="you@company.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} />
                       {errors.email && <p className="text-red-400 text-[12px] mt-1">{errors.email}</p>}
                     </div>
                     <div>
-                      <label className="text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-2"><Phone size={14}/> Phone</label>
-                      <input className={`input-field text-[14px] ${errors.phone ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="+91 98765 43210" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} />
+                      <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-1.5"><Phone size={14}/> Phone</label>
+                      <input type="tel" className={`input-field text-[16px] sm:text-[14px] ${errors.phone ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="+91 98765 43210" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} />
                       {errors.phone && <p className="text-red-400 text-[12px] mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
                   <div className="pt-2">
-                    <button type="submit" disabled={submitting} className="btn-primary w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300">
+                    <button type="submit" disabled={submitting} className="btn-primary w-full justify-center min-h-[46px] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300">
                       {submitting ? (
                         <><Loader2 size={15} className="animate-spin" /> Sending...</>
                       ) : (

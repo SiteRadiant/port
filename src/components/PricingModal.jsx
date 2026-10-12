@@ -23,46 +23,46 @@ const PricingModal = ({ serviceId, onClose }) => {
   if (!data) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-8 overflow-y-auto" onClick={onClose}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto" onClick={onClose}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div
-        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[1100px] w-full my-8"
+        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[1100px] w-full max-h-[92vh] overflow-y-auto my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition"
+          className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition z-10"
         >
           <X size={16} />
         </button>
 
-        <div className="p-6 sm:p-10 border-b border-white/5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-300 text-[12px] font-medium mb-4">
+        <div className="p-5 sm:p-8 md:p-10 border-b border-white/5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-300 text-[11px] sm:text-[12px] font-medium mb-3 sm:mb-4">
             <Sparkles size={12} /> {data.tagline}
           </div>
-          <h2 className="text-[28px] sm:text-[36px] font-extrabold tracking-tight text-white">
+          <h2 className="text-[24px] sm:text-[32px] md:text-[36px] font-extrabold tracking-tight text-white">
             {data.title} <span className="text-zinc-500">plans &amp; pricing</span>
           </h2>
-          <p className="mt-3 text-zinc-400 max-w-[640px]">{data.subtitle}</p>
-          <p className="mt-2 text-[13px] text-zinc-500">Transparent, project-based pricing. No hidden fees.</p>
+          <p className="mt-2 sm:mt-3 text-zinc-400 text-[14px] sm:text-[16px] max-w-[640px]">{data.subtitle}</p>
+          <p className="mt-2 text-[12px] sm:text-[13px] text-zinc-500">Transparent, project-based pricing. No hidden fees.</p>
         </div>
 
-        <div className="flex justify-center items-center gap-4 py-8 border-b border-white/5 bg-white/[0.02]">
-          <span className={`text-[14px] transition-colors ${!includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>Standard Setup</span>
+        <div className="flex justify-center items-center gap-3 sm:gap-4 py-4 sm:py-6 border-b border-white/5 bg-white/[0.02] px-4">
+          <span className={`text-[13px] sm:text-[14px] transition-colors ${!includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>Standard Setup</span>
           
           <button 
             onClick={() => setIncludeAddon(!includeAddon)}
-            className={`relative w-14 h-7 rounded-full p-1 transition-colors duration-300 ease-in-out ${includeAddon ? 'bg-red-500' : 'bg-zinc-700'}`}
+            className={`relative w-12 sm:w-14 h-6 sm:h-7 rounded-full p-1 transition-colors duration-300 ease-in-out ${includeAddon ? 'bg-red-500' : 'bg-zinc-700'}`}
           >
-            <div className={`w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${includeAddon ? 'translate-x-7' : 'translate-x-0'}`} />
+            <div className={`w-4 sm:w-5 h-4 sm:h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${includeAddon ? 'translate-x-6 sm:translate-x-7' : 'translate-x-0'}`} />
           </button>
           
-          <span className={`text-[14px] flex items-center gap-2 transition-colors ${includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>
+          <span className={`text-[13px] sm:text-[14px] flex items-center gap-1.5 sm:gap-2 transition-colors ${includeAddon ? 'text-white font-bold' : 'text-zinc-500'}`}>
             + Managed Hosting <span className="badge-soft ml-1 hidden sm:inline-flex">Recommended</span>
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-6 sm:p-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 p-4 sm:p-6 md:p-10">
           {data.plans.map((plan) => {
             const displayPrice = includeAddon ? plan.price + 5000 : plan.price;
             

@@ -25,27 +25,27 @@ const Services = () => {
   };
 
   return (
-    <section className="relative py-20 border-t border-white/5 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <section className="relative py-14 sm:py-20 lg:py-24 border-t border-white/5 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-[720px] mb-10"
+          className="max-w-[720px] mb-8 sm:mb-12"
         >
-          <p className="eyebrow mb-4">What We Deliver</p>
-          <h2 className="text-[34px] sm:text-[44px] font-extrabold leading-[1.06] tracking-tight">
+          <p className="eyebrow mb-3 sm:mb-4">What We Deliver</p>
+          <h2 className="text-[28px] sm:text-[38px] lg:text-[44px] font-extrabold leading-[1.08] tracking-tight">
             Everything you need,
             <br />
             <span className="text-zinc-500">nothing you don't</span>
           </h2>
-          <p className="mt-4 text-zinc-400 text-[16px] max-w-[560px]">
+          <p className="mt-3 sm:mt-4 text-zinc-400 text-[14px] sm:text-[16px] max-w-[560px]">
             High-performance custom websites and scalable web applications engineered for growth. Click any service to view transparent pricing and deliverables.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((s, idx) => {
             const Icon = iconMap[s.icon] || Sparkles;
             return (
@@ -56,7 +56,7 @@ const Services = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onClick={() => handleClick(s.id)} 
-                className="svc-card rounded-2xl p-6 lg:p-8 group cursor-pointer hover:shadow-lg transition-transform transform hover:-translate-y-1"
+                className="svc-card rounded-2xl p-5 sm:p-6 lg:p-8 group cursor-pointer hover:shadow-lg transition-transform transform hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="icon-tile group-hover:bg-red-500/10 group-hover:border-red-500/30 transition-colors">

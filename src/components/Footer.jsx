@@ -7,7 +7,7 @@ const Footer = () => {
   const { openContact } = useUI();
 
   return (
-    <footer className="bg-transparent border-t border-white/5 py-12 mt-12">
+    <footer className="bg-transparent border-t border-white/5 py-12 pb-24 sm:pb-12 mt-12">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {Object.entries(footerLinks).map(([title, links]) => (

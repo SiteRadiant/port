@@ -96,37 +96,41 @@ const Navbar = () => {
           </button>
         </div>
 
-        <button className="lg:hidden text-white" onClick={() => setOpenMobile(!openMobile)}>
-          {openMobile ? <X size={22} /> : <Menu size={22} />}
+        <button 
+          className="lg:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition" 
+          onClick={() => setOpenMobile(!openMobile)}
+          aria-label={openMobile ? "Close navigation menu" : "Open navigation menu"}
+        >
+          {openMobile ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {openMobile && (
-        <div className="lg:hidden bg-[#0a0a0b] border-t border-white/5 px-6 py-4 space-y-3 overflow-y-auto max-h-[85vh] animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="lg:hidden bg-[#0a0a0b]/98 backdrop-blur-xl border-t border-white/10 px-6 py-5 space-y-3.5 overflow-y-auto max-h-[85vh] shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
           {navLinks.map((link) => (
             <div key={link.label} className="space-y-1">
               {link.href && link.href !== '#' ? (
                 link.href.startsWith('http') ? (
-                  <a href={link.href} target="_blank" rel="noreferrer" className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
+                  <a href={link.href} target="_blank" rel="noreferrer" className="block w-full text-left text-zinc-100 font-medium py-2.5 text-[15px]" onClick={() => setOpenMobile(false)}>
                     {link.label}
                   </a>
                 ) : (
-                  <Link to={link.href} className="block w-full text-left text-zinc-200 font-medium py-2" onClick={() => setOpenMobile(false)}>
+                  <Link to={link.href} className="block w-full text-left text-zinc-100 font-medium py-2.5 text-[15px]" onClick={() => setOpenMobile(false)}>
                     {link.label}
                   </Link>
                 )
               ) : (
-                <div className="text-zinc-500 font-medium text-xs uppercase tracking-wider pt-2 pb-1">
+                <div className="text-zinc-500 font-semibold text-xs uppercase tracking-wider pt-2.5 pb-1">
                   {link.label}
                 </div>
               )}
               {link.hasDropdown && (
-                <div className="pl-4 border-l border-white/10 space-y-2">
+                <div className="pl-4 border-l border-white/10 space-y-1.5 mt-1">
                   {link.items.map((item) => (
                     <button
                       key={item.label}
                       onClick={() => handleItemClick(item)}
-                      className="block w-full text-left text-zinc-400 hover:text-white py-1.5 text-sm"
+                      className="block w-full text-left text-zinc-400 hover:text-white py-2 text-[14px]"
                     >
                       {item.label}
                     </button>
@@ -136,11 +140,20 @@ const Navbar = () => {
             </div>
           ))}
           <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
-            <div className="flex gap-3">
-              <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2">Pricing</Link>
-              <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center !py-2 border border-red-500/30 text-red-400 hover:bg-red-500/10">Donate</a>
+            <div className="flex gap-2.5">
+              <Link to="/services" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center min-h-[44px] !py-2.5 text-[14px]">Pricing</Link>
+              <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" onClick={() => setOpenMobile(false)} className="flex-1 btn-ghost justify-center min-h-[44px] !py-2.5 text-[14px] border border-red-500/30 text-red-400 hover:bg-red-500/10">Donate</a>
             </div>
-            <button onClick={() => { openContact(); setOpenMobile(false); }} className="w-full btn-primary justify-center !py-2">Get a Quote</button>
+            <button onClick={() => { openContact(); setOpenMobile(false); }} className="w-full btn-primary justify-center min-h-[44px] !py-2.5 text-[15px]">Get a Quote</button>
+            <a 
+              href="https://wa.me/917208999095?text=Hi%20SiteRadiant%2C%20I%20would%20like%20to%20discuss%20a%20website%20project." 
+              target="_blank" 
+              rel="noreferrer" 
+              onClick={() => setOpenMobile(false)}
+              className="w-full text-center py-2 text-xs text-emerald-400 hover:text-emerald-300 font-medium transition"
+            >
+              💬 Or chat directly on WhatsApp (+91 72089 99095)
+            </a>
           </div>
         </div>
       )}
