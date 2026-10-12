@@ -27,7 +27,14 @@ export const navLinks = [
 ];
 
 export const partnerLogos = [
-  { name: 'EliteDrop', color: '#000000' },
+  { name: 'React', color: '#61DAFB' },
+  { name: 'Next.js', color: '#ffffff' },
+  { name: 'Tailwind CSS', color: '#38BDF8' },
+  { name: 'Django', color: '#092E20' },
+  { name: 'Node.js', color: '#68A063' },
+  { name: 'PostgreSQL', color: '#336791' },
+  { name: 'TypeScript', color: '#3178C6' },
+  { name: 'Vercel', color: '#ffffff' },
 ];
 
 export const services = [
@@ -38,10 +45,10 @@ export const services = [
 ];
 
 export const stats = [
-  { value: 100, suffix: '+', label: 'Projects Delivered' },
-  { value: 97, suffix: '%', label: 'Client Satisfaction' },
-  { value: 10, suffix: '+', label: 'Industries Served' },
-  { value: 5, suffix: '+', label: 'Countries Served' },
+  { value: 100, suffix: '%', label: 'Hand-Crafted Custom Code' },
+  { value: 99, suffix: '+', label: 'Target Speed Score' },
+  { value: 14, suffix: ' Days', label: 'Average Turnaround' },
+  { value: 100, suffix: '%', label: 'Founder-Led Communication' },
 ];
 
 export const industries = [
@@ -51,16 +58,21 @@ export const industries = [
 ];
 
 export const processSteps = [
-  { num: '01', icon: 'clock', title: 'Discovery Call', desc: 'A free 60-min session to map out goals, market, and technical scope.' },
-  { num: '02', icon: 'zap', title: 'Design & Build', desc: 'Agile sprints with weekly demos — you always know what is shipping next.' },
-  { num: '03', icon: 'rocket', title: 'Launch & Scale', desc: 'Deploy, monitor, and improve — we stay with you well past launch.' },
+  { num: '01', icon: 'clock', title: 'Discovery Call', desc: 'A free 30-min session to map out goals, audience, and technical scope.' },
+  { num: '02', icon: 'zap', title: 'Design & Build', desc: 'Agile development with frequent updates — you always know what is shipping next.' },
+  { num: '03', icon: 'rocket', title: 'Launch & Scale', desc: 'Deploy, test on real devices, and monitor — we provide post-launch warranty support.' },
 ];
 
 export const testimonials = [
-  { brand: 'CRED', country: 'India', flag: '🇮🇳', color: '#000000', quote: 'SiteRadiant understood our product philosophy from day one. The reward engine they built is what makes our app feel like a club.', author: 'Head of Product, CRED', caseTitle: 'Reward Engine That Made Paying Bills Addictive' },
-  { brand: 'Canva', country: 'Australia', flag: '🇦🇺', color: '#00C4CC', quote: 'SiteRadiant delivered production-quality work at a pace we had only seen from top-tier internal teams.', author: 'Growth Engineering Lead, Canva', caseTitle: 'Rebuilt Mobile Onboarding in 6 Weeks' },
-  { brand: 'Razorpay', country: 'India', flag: '🇮🇳', color: '#0c2451', quote: 'They shipped a payments integration our internal team estimated at 3 months — in just 4 weeks. Outstanding.', author: 'VP Engineering, Razorpay', caseTitle: 'Cut Checkout Drop-off by 38% in One Quarter' },
-  { brand: 'Zepto', country: 'India', flag: '🇮🇳', color: '#b91c1c', quote: 'Their AI recommendations boosted basket size by 24%. The collaboration felt like an extension of our team.', author: 'Director of Growth, Zepto', caseTitle: 'AI Recommendations That Lifted AOV by 24%' },
+  { 
+    brand: 'Fly With Ranjita', 
+    country: 'India', 
+    flag: '🇮🇳', 
+    color: '#ef4444', 
+    quote: 'SiteRadiant transformed our travel portal into a high-converting booking and package discovery experience. Fast, clean, and delivered with genuine care.', 
+    author: 'Founder, Fly With Ranjita', 
+    caseTitle: 'Immersive Travel Agency Discovery & Booking Portal' 
+  },
 ];
 
 export const footerLinks = {

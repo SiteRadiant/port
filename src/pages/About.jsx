@@ -6,9 +6,9 @@ import SEO from '../components/SEO';
 import { StructuredData } from '../components/StructuredData';
 
 const topStats = [
-  { icon: Users, value: '60+', label: 'Specialists' },
+  { icon: ShieldCheck, value: '100%', label: 'Founder-Led' },
   { icon: Calendar, value: '2026', label: 'Founded' },
-  { icon: Rocket, value: '150+', label: 'Projects Delivered' },
+  { icon: Code2, value: '100%', label: 'Custom Code' },
 ];
 
 const values = [

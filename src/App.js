@@ -61,9 +61,29 @@ const Home = () => {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'SiteRadiant',
-            url: window.location.origin,
-            logo: `${window.location.origin}/logo192.png`,
-            sameAs: [],
+            legalName: 'Global One Logistics And Distribution',
+            url: 'https://www.siteradiant.co.in',
+            logo: 'https://www.siteradiant.co.in/android-chrome-512x512.png',
+            sameAs: [
+              'https://x.com/siteradiant',
+              'https://instagram.com/siteradiant',
+              'https://github.com/SiteRadiant'
+            ],
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+91-7208999095',
+              email: 'support@siteradiant.co.in',
+              contactType: 'sales and customer support',
+              areaServed: ['IN', 'US', 'GB', 'CA', 'AE'],
+              availableLanguage: ['English', 'Hindi']
+            },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Navi Mumbai',
+              addressRegion: 'Maharashtra',
+              postalCode: '410206',
+              addressCountry: 'IN'
+            }
           },
           {
             '@context': 'https://schema.org',

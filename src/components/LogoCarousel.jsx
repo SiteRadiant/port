@@ -19,7 +19,7 @@ const LogoCarousel = () => {
   return (
     <section className="py-16 border-t border-white/5">
       <p className="text-center text-[11px] tracking-[0.2em] uppercase text-zinc-500 mb-10">
-        Trusted by the world’s best product teams
+        Modern Technologies & Frameworks We Build With
       </p>
       <div className="fade-edges">
         <div className="marquee">

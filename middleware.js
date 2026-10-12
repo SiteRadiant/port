@@ -45,10 +45,27 @@ export default function middleware(request) {
   if (acceptHeader.includes('text/markdown')) {
     let mdContent = '';
     if (validPaths.includes(url.pathname)) {
-      mdContent = url.pathname === '/' ? `# Custom Websites Built to Turn Visitors Into Customers\n\nSiteRadiant is a premier agency.\n[API Docs](/openapi.json) | [Developers](/developers)` : `# SiteRadiant: ${url.pathname}\n\nContent for this page is available.`;
+      mdContent = url.pathname === '/' ? `# Custom Websites Built to Turn Visitors Into Customers - SiteRadiant
+
+SiteRadiant is a boutique web design and development studio based in Navi Mumbai, India, serving clients across India and internationally.
+
+## Services & Transparent Pricing
+- Custom Website Development (from ₹7,999 INR / ~$100 USD)
+- Website Redesign & Conversion Optimization (from ₹11,499 INR / ~$140 USD)
+- E-Commerce Solutions (from ₹19,999 INR / ~$240 USD)
+- Learning Management Systems (from ₹24,999 INR / ~$300 USD)
+- Custom Web Applications & AI Automation
+
+## Flagship Verified Work
+- Fly With Ranjita ([flywithranjita.com](https://flywithranjita.com)): High-converting, immersive travel agency portal.
+
+## Contact & Enquiries
+- Email: support@siteradiant.co.in
+- Phone: +91 72089 99095 / +91 99871 14604
+- [Contact Form](/contact) | [Services](/services) | [API Docs](/openapi.json)` : `# SiteRadiant: ${url.pathname}\n\nContent for this page is available. We build high-converting websites and custom software.\nContact: support@siteradiant.co.in`;
       return new Response(mdContent, { status: 200, headers: { 'Content-Type': 'text/markdown; charset=utf-8', 'Vary': 'Accept' } });
     } else {
-      return new Response('# 404 Not Found\n\nThe requested path does not exist.', { status: 404, headers: { 'Content-Type': 'text/markdown; charset=utf-8', 'Vary': 'Accept' } });
+      return new Response('# 404 Not Found\n\nThe requested path does not exist on SiteRadiant. Please check our [sitemap](/sitemap.xml) or read our [Agent Instructions](/llms.txt).', { status: 404, headers: { 'Content-Type': 'text/markdown; charset=utf-8', 'Vary': 'Accept' } });
     }
   }
 

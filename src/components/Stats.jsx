@@ -41,10 +41,10 @@ export default function Stats({ imageSrc = '/images/stats-placeholder.svg' }) {
 
   // data for stats
   const stats = [
-    { label: 'Projects Delivered', value: 150, suffix: '+' },
-    { label: 'Client Satisfaction', value: 98, suffix: '%' },
-    { label: 'Industries Served', value: 25, suffix: '+' },
-    { label: 'Countries Served', value: 18, suffix: '+' },
+    { label: 'Hand-Crafted Custom Code', value: 100, suffix: '%' },
+    { label: 'Target Lighthouse Speed', value: 99, suffix: '+' },
+    { label: 'Average MVP Launch', value: 14, suffix: ' Days' },
+    { label: 'Founder-Led Communication', value: 100, suffix: '%' },
   ];
 
   useEffect(() => {
