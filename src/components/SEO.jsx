@@ -11,7 +11,9 @@ const SEO = ({
   noIndex = false,
   schema,
 }) => {
-  const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+  const pageTitle = title
+    ? (title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`)
+    : `${SITE_NAME} | Custom Website Development Agency`;
   const canonicalUrl = `https://www.siteradiant.co.in${path}`;
 
   return (
