@@ -9,6 +9,30 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Why Business Websites Fail to Convert (And How to Fix It)',
+      desc: 'Discover why your website gets traffic but zero enquiries. An evidence-based analysis of the 6 critical friction points causing low website inquiry rates.',
+      link: '/why-websites-fail-to-convert',
+      date: 'Oct 20, 2026'
+    },
+    {
+      title: 'When Should a Business Redesign Its Website? (7 Warning Signs)',
+      desc: '7 clear technical and commercial signals indicating your business website is outdated and when a strategic redesign will deliver positive ROI.',
+      link: '/when-to-redesign-your-website',
+      date: 'Oct 20, 2026'
+    },
+    {
+      title: 'How Much Does a Custom Website Cost in 2026?',
+      desc: 'A complete breakdown of custom website development costs, feature scopes, and milestone pricing for landing pages and business platforms.',
+      link: '/how-much-does-a-custom-website-cost',
+      date: 'Oct 20, 2026'
+    },
+    {
+      title: 'Custom E-Commerce Website vs. Shopify: 2026 Guide',
+      desc: 'Compare custom e-commerce against Shopify on transaction fees, app subscriptions, mobile loading speed, and total long-term ownership.',
+      link: '/custom-website-vs-shopify',
+      date: 'Oct 20, 2026'
+    },
+    {
       title: 'What Makes a Website SEO-Friendly?',
       desc: 'Learn the technical requirements and architecture that make a website easily crawlable by search engines and AI answers bots.',
       link: '/seo-friendly-website',
