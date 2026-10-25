@@ -15,6 +15,13 @@ export default function middleware(request) {
       'RateLimit-Remaining': '99',
       'RateLimit-Reset': '60'
     };
+    if (url.pathname === '/api/geo' || url.pathname === '/api/country') {
+      const country = request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || 'IN';
+      return new Response(JSON.stringify({ country }), {
+        status: 200,
+        headers: { ...headers, 'Cache-Control': 'private, no-cache, no-store, must-revalidate' }
+      });
+    }
     if (url.pathname === '/api/v1/services') {
       return new Response(JSON.stringify([{ id: "dev", name: "Custom Website Development" }]), {
         status: 200,
