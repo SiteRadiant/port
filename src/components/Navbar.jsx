@@ -3,6 +3,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { navLinks, BRAND } from '../mock/mock';
 import { useUI } from '../context/UIContext';
+import CountrySelector from './CountrySelector';
 
 const Logo = () => (
   <Link to="/" className="flex items-center gap-3 group">
@@ -87,6 +88,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <CountrySelector />
           <Link to="/services" className="nav-link">Pricing</Link>
           <a href="https://razorpay.me/@siteradiant" target="_blank" rel="noreferrer" className="btn-ghost !py-2 !px-5 !text-[14px] border border-red-500/30 text-red-400 hover:bg-red-500/10">
             Donate
@@ -96,13 +98,16 @@ const Navbar = () => {
           </button>
         </div>
 
-        <button 
-          className="lg:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition" 
-          onClick={() => setOpenMobile(!openMobile)}
-          aria-label={openMobile ? "Close navigation menu" : "Open navigation menu"}
-        >
-          {openMobile ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <CountrySelector compact={true} />
+          <button 
+            className="text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition" 
+            onClick={() => setOpenMobile(!openMobile)}
+            aria-label={openMobile ? "Close navigation menu" : "Open navigation menu"}
+          >
+            {openMobile ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {openMobile && (
@@ -162,5 +167,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

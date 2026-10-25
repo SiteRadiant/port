@@ -1,18 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { X, Send, CheckCircle2, Mail, Phone, User, MessageSquare, Building, Loader2, ArrowRight, ArrowLeft } from 'lucide-react';
-import { fmt } from '../mock/mock';
 import { sendLeadToZohoFlow } from '../lib/zohoWebhook';
+import { useCurrency } from '../hooks/useCurrency';
 
 const services = ['Website Development', 'Landing Page', 'E-Commerce Solutions', 'Learning Management System', 'Startups', 'Enterprises', 'Other'];
-const budgets = ['Under ₹10,000', '₹10,000 - ₹30,000', '₹30,000 - ₹1,00,000', '₹1,00,000 - ₹5,00,000', 'Above ₹5,00,000'];
 
 const ContactDialog = ({ onClose, prefill }) => {
+  const { currentRegion, budgets, formatAmount } = useCurrency();
   const [step, setStep] = useState(1);
+
+  const initialBudget = () => {
+    if (prefill?.price && typeof prefill.price === 'number') {
+      const p = prefill.price;
+      if (budgets && budgets.length === 5) {
+        if (currentRegion.code === 'IN') {
+          return p < 10000 ? budgets[0] : p < 30000 ? budgets[1] : p < 100000 ? budgets[2] : p < 500000 ? budgets[3] : budgets[4];
+        } else if (currentRegion.code === 'US') {
+          return p < 500 ? budgets[0] : p < 1500 ? budgets[1] : p < 5000 ? budgets[2] : p < 15000 ? budgets[3] : budgets[4];
+        } else if (currentRegion.code === 'GB') {
+          return p < 400 ? budgets[0] : p < 1200 ? budgets[1] : p < 4000 ? budgets[2] : p < 12000 ? budgets[3] : budgets[4];
+        } else if (currentRegion.code === 'CA') {
+          return p < 600 ? budgets[0] : p < 2000 ? budgets[1] : p < 6500 ? budgets[2] : p < 20000 ? budgets[3] : budgets[4];
+        } else if (currentRegion.code === 'AU') {
+          return p < 700 ? budgets[0] : p < 2200 ? budgets[1] : p < 7500 ? budgets[2] : p < 22000 ? budgets[3] : budgets[4];
+        } else if (currentRegion.code === 'AE') {
+          return p < 1800 ? budgets[0] : p < 5500 ? budgets[1] : p < 18000 ? budgets[2] : p < 55000 ? budgets[3] : budgets[4];
+        }
+      }
+      return budgets[1] || '';
+    }
+    return '';
+  };
+
+  const initialMessage = () => {
+    if (prefill?.plan && prefill?.service) {
+      const priceStr = prefill.price !== undefined ? ` (${formatAmount(prefill.price)})` : '';
+      return `Interested in the ${prefill.plan} plan${priceStr} for ${prefill.service}. Region: ${currentRegion.name} (${currentRegion.currency}).`;
+    }
+    return '';
+  };
+
   const [form, setForm] = useState({
     name: '', email: '', phone: '', company: '',
     service: prefill?.service || '', plan: prefill?.plan || '',
-    budget: prefill?.price ? (prefill.price < 10000 ? budgets[0] : prefill.price < 30000 ? budgets[1] : prefill.price < 100000 ? budgets[2] : prefill.price < 500000 ? budgets[3] : budgets[4]) : '',
-    message: prefill?.plan ? `Interested in the ${prefill.plan} plan (${fmt(prefill.price)}) for ${prefill.service}.` : '',
+    budget: initialBudget(),
+    message: initialMessage(),
   });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
@@ -44,68 +76,60 @@ const ContactDialog = ({ onClose, prefill }) => {
     const errs = {};
     if (!form.name.trim()) errs.name = 'Required';
     if (!form.email.trim() || !/^\S+@\S+\.\S+$/.test(form.email)) errs.email = 'Valid email required';
-    if (!form.phone.trim() || form.phone.replace(/\D/g, '').length < 10) errs.phone = 'Valid phone required';
+    if (!form.phone.trim() || form.phone.replace(/\D/g, '').length < 7) errs.phone = 'Valid phone required';
     if (!form.service) errs.service = 'Required';
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
-    const leadPayload = {
-      ...form,
-      page: window.location.pathname,
-      userAgent: window.navigator.userAgent,
-    };
-
+    setSubmitting(true);
     try {
-      setSubmitting(true);
-      const result = await sendLeadToZohoFlow(leadPayload);
-
-      // Keep local backup for debugging/demo even when webhook is configured.
-      const leads = JSON.parse(localStorage.getItem('sr_leads') || '[]');
-      leads.push({ ...leadPayload, submittedAt: new Date().toISOString(), webhookSkipped: Boolean(result?.skipped) });
-      localStorage.setItem('sr_leads', JSON.stringify(leads));
-
-      if (result?.skipped) {
-        setSubmitError('Webhook URL is not configured. Lead saved locally only.');
-        return;
-      }
+      await sendLeadToZohoFlow({
+        ...form,
+        region: currentRegion.name,
+        currency: currentRegion.currency
+      });
       setSubmitted(true);
     } catch (err) {
-      // Fallback to local storage so leads are not lost during webhook/cors failures.
-      const leads = JSON.parse(localStorage.getItem('sr_leads') || '[]');
-      leads.push({ ...leadPayload, submittedAt: new Date().toISOString(), webhookError: String(err?.message || err) });
-      localStorage.setItem('sr_leads', JSON.stringify(leads));
-      setSubmitError('Could not send to Zoho Flow right now. Saved locally as fallback.');
+      console.error('Lead submission failed', err);
+      setSubmitError('Unable to submit enquiry right now. Please try again or WhatsApp us directly.');
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onClick={onClose}>
+    <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto" onClick={onClose}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div
-        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[640px] w-full max-h-[92vh] overflow-y-auto my-auto transition-all duration-300"
+        className="relative bg-[#0e0e10] border border-white/10 rounded-2xl max-w-[620px] w-full max-h-[92vh] overflow-y-auto my-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition z-10">
-          <X size={16} />
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-zinc-300 transition z-10"
+        >
+          <X size={15} />
         </button>
 
         {!submitted ? (
-          <div className="p-5 sm:p-9">
-            <h2 className="text-[22px] sm:text-[26px] font-extrabold text-white tracking-tight">Tell us about your project</h2>
-            <div className="flex items-center gap-2 mt-3 sm:mt-4 mb-6 sm:mb-8">
-              <div className={`h-1.5 flex-1 rounded-full transition-colors duration-500 ${step >= 1 ? 'bg-red-500' : 'bg-white/10'}`}></div>
-              <div className={`h-1.5 flex-1 rounded-full transition-colors duration-500 ${step >= 2 ? 'bg-red-500' : 'bg-white/10'}`}></div>
+          <div className="p-5 sm:p-7 md:p-8">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2 h-2 rounded-full bg-red-400" />
+              <span className="text-[11px] font-semibold tracking-wider uppercase text-zinc-400">Step {step} of 2</span>
             </div>
+            <h2 className="text-[22px] sm:text-[26px] font-bold text-white tracking-tight">
+              {step === 1 ? 'Tell us about your project' : 'How should we reach you?'}
+            </h2>
+            <p className="text-zinc-400 text-[13px] sm:text-[14px] mt-1 mb-6">
+              {step === 1 ? 'Select what you need and your general budget.' : 'We will review your project and get back within 24 hours.'}
+            </p>
 
             <form onSubmit={submit}>
-              
-              {/* STEP 1: Project Details */}
+              {/* STEP 1: Service and Budget */}
               {step === 1 && (
-                <div className="space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div className="space-y-5 animate-in fade-in duration-300">
                   <div>
-                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">What service are you looking for?</label>
+                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">Service Required</label>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {services.map((s) => (
                         <button
@@ -126,7 +150,9 @@ const ContactDialog = ({ onClose, prefill }) => {
                   </div>
 
                   <div>
-                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">Estimated Budget (INR)</label>
+                    <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 mb-2.5 sm:mb-3 block">
+                      Estimated Budget ({currentRegion.currency})
+                    </label>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {budgets.map((b) => (
                         <button
@@ -180,7 +206,7 @@ const ContactDialog = ({ onClose, prefill }) => {
                     </div>
                     <div>
                       <label className="text-[12px] sm:text-[13px] font-semibold text-zinc-300 flex items-center gap-1.5 mb-1.5"><Phone size={14}/> Phone</label>
-                      <input type="tel" className={`input-field text-[16px] sm:text-[14px] ${errors.phone ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder="+91 98765 43210" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} />
+                      <input type="tel" className={`input-field text-[16px] sm:text-[14px] ${errors.phone ? 'border-red-500/50 focus:border-red-500' : ''}`} placeholder={currentRegion.code === 'IN' ? '+91 98765 43210' : '+1 555 123 4567'} value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} />
                       {errors.phone && <p className="text-red-400 text-[12px] mt-1">{errors.phone}</p>}
                     </div>
                   </div>

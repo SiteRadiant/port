@@ -9,23 +9,23 @@ import Process from '../components/Process';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import { BRAND, getStartingPrice } from '../mock/mock';
+import { BRAND } from '../mock/mock';
 import { useUI } from '../context/UIContext';
 import { useCurrency } from '../hooks/useCurrency';
 
-const heroPills = [
-  { icon: CheckCircle2, color: 'text-emerald-400', label: 'Fast websites with SEO built in' },
-  { icon: TrendingUp, color: 'text-red-400', label: 'Plans that scale from startup to enterprise' },
-  { icon: Star, color: 'text-amber-400 fill-amber-400', label: 'Transparent pricing in INR' },
-  { icon: Briefcase, color: 'text-sky-400', label: 'Strategy, build, and support in one place' },
-  { icon: AppWindow, color: 'text-emerald-400', label: 'Custom web apps in 3 weeks' },
-  { icon: Store, color: 'text-green-400', label: 'E-commerce stores with multi-currency support' },
-  { icon: Headphones, color: 'text-purple-400', label: 'Customer support' }
-];
-
 export default function ServicesPage() {
   const { openPricing, openContact } = useUI();
-  const { formatPrice } = useCurrency();
+  const { formatStartingPrice, currentRegion } = useCurrency();
+
+  const heroPills = [
+    { icon: CheckCircle2, color: "text-emerald-400", label: "Fast websites with SEO built in" },
+    { icon: TrendingUp, color: "text-red-400", label: "Plans that scale from startup to enterprise" },
+    { icon: Star, color: "text-amber-400 fill-amber-400", label: `Transparent pricing in ${currentRegion.currency}` },
+    { icon: Briefcase, color: "text-sky-400", label: "Strategy, build, and support in one place" },
+    { icon: AppWindow, color: "text-emerald-400", label: "Custom web apps in 3 weeks" },
+    { icon: Store, color: "text-green-400", label: "E-commerce stores with multi-currency support" },
+    { icon: Headphones, color: "text-purple-400", label: "Customer support" }
+  ];
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">Website</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('website'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatStartingPrice('website')}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">Landing Page</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('landing_page'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatStartingPrice('landing_page')}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>  
@@ -89,7 +89,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">E-Commerce</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('ecommerce'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatStartingPrice('ecommerce')}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] uppercase tracking-wider text-zinc-500">LMS System</div>
-                  <div className="text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('lms'))}</div>
+                  <div className="text-[20px] font-bold text-white leading-tight">{formatStartingPrice('lms')}</div>
                   <div className="text-[11px] text-zinc-500">starting price</div>
                 </div>
               </div>

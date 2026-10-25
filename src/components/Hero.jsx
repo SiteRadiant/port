@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Headphones, Store, App
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
-import { getStartingPrice } from '../mock/mock';
+
 import { useCurrency } from '../hooks/useCurrency';
 
 const heroPills = [
@@ -18,7 +18,7 @@ const heroPills = [
 const Hero = () => {
   const navigate = useNavigate();
   const { openPricing, openContact } = useUI();
-  const { formatPrice } = useCurrency();
+  const { formatStartingPrice } = useCurrency();
 
   return (
     <section className="relative pt-32 pb-16 overflow-hidden">
@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
             <div className="text-left min-w-0">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">Website</div>
-              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('website'))}</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatStartingPrice('website')}</div>
               <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Hero = () => {
             </div>
             <div className="text-left min-w-0">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">Landing Page</div>
-              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('landing_page'))}</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatStartingPrice('landing_page')}</div>
               <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>  
@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
             <div className="text-left min-w-0">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">E-Commerce</div>
-              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('ecommerce'))}</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatStartingPrice('ecommerce')}</div>
               <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>
@@ -88,7 +88,7 @@ const Hero = () => {
             </div>
             <div className="text-left min-w-0">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-500 truncate">LMS System</div>
-              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatPrice(getStartingPrice('lms'))}</div>
+              <div className="text-[16px] sm:text-[20px] font-bold text-white leading-tight">{formatStartingPrice('lms')}</div>
               <div className="text-[10px] sm:text-[11px] text-zinc-500 truncate">starting price</div>
             </div>
           </div>

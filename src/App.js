@@ -22,6 +22,7 @@ import FAQ from './pages/FAQ';
 import NotFound from './pages/NotFound';
 import Toaster from "./components/ui/toaster";
 import { UIProvider } from './context/UIContext';
+import { RegionProvider } from './context/RegionContext';
 import CustomWebsiteDev from './pages/services/customwebsitedevelopment';
 import WebsiteRedesign from './pages/services/websiteredesign';
 import ConversionWebDesign from './pages/services/conversionfocusedwebdesign';
@@ -134,6 +135,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ScrollToTop />
+        <RegionProvider>
         <UIProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -177,6 +179,7 @@ function App() {
           </Routes>
           <FAB />
         </UIProvider>
+      </RegionProvider>
       </BrowserRouter>
       <Analytics />
       <SpeedInsights />
